@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2752d7ff-4de3-4b5f-8fde-88095113e7e4" name="Default Changelist" comment="Test commit and push">
+      <change afterPath="$PROJECT_DIR$/src/model/item-for-sale.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/item-for-sale.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/login.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/login.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +41,11 @@
     <property name="settings.editor.selected.configurable" value="project.propDebugger" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/model" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Tests (staalptkram-front)" type="JavaScriptTestRunnerKarma">
@@ -99,6 +108,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Test commit and push" />
