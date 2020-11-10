@@ -1,1 +1,9 @@
-<p>item-for-sale works!</p>
+<div *ngIf="itemForSale">
+  <h2>{{itemForSale.name | uppercase}} | {{itemForSale.id}} Details -- ({{itemForSale.category}})</h2>
+  <h3>{{itemForSale.name}}</h3>
+  <div>hiero een afbeelding</div>
+  <div><span>Omschrijving: </span>{{itemForSale.description}}</div>
+
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>
