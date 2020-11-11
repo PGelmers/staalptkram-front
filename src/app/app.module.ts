@@ -7,11 +7,12 @@ import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { NewUserComponent } from './new-user/new-user.component';
-
+import {MessagesComponent} from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MessagesComponent,
     LoginComponent,
     NewUserComponent,
   ],
@@ -25,4 +26,3 @@ import { NewUserComponent } from './new-user/new-user.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
