@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
-import { ItemForSale } from '../model/item-for-sale';
-import { ItemForSaleService } from '..services/item-for-sale.service';
+import { ItemForSale } from '../../model/item-for-sale';
+import { ItemForSaleService } from '../../services/item-for-sale.service';
 
 @Component({
   selector: 'app-item-for-sale',
@@ -22,17 +22,15 @@ export class ItemForSaleComponent implements OnInit {
   }
 
   getItemForSale(): void {
-    //TODO: maken zodra de routing module werkt.
+    // TODO: maken zodra de routing module werkt.
   }
 
   goBack(): void {
-    this.location.goBack();
+    this.location.back();
   }
 
   save(): void {
-    this.itemForSaleService.updateItemForSale(this.itemForSale).subscribe(
-      () ==> this.goBack()
-    );
+    this.itemForSaleService.updateItemForSale(this.itemForSale)
+      .subscribe(() => this.goBack());
   }
-
 }
