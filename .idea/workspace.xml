@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2752d7ff-4de3-4b5f-8fde-88095113e7e4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/login.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/login.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/user.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/login.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,16 +37,19 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/model" />
     </key>
@@ -88,6 +96,9 @@
       <workItem from="1605006151794" duration="211000" />
       <workItem from="1605006366999" duration="3952000" />
       <workItem from="1605017661393" duration="6869000" />
+      <workItem from="1605079462781" duration="641000" />
+      <workItem from="1605080123692" duration="12577000" />
+      <workItem from="1605098820226" duration="2346000" />
     </task>
     <task id="LOCAL-00001" summary="Test commit and push">
       <created>1605003351812</created>
@@ -117,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605017570807</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Ready for testing new-user-component">
+      <created>1605079698292</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1605079698292</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,17 +156,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Test commit and push" />
     <MESSAGE value="Made all components and models for user and account" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made all components and models for user and account" />
+    <MESSAGE value="Ready for testing new-user-component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ready for testing new-user-component" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2371" y="88" width="1008" height="911" key="CommitChangelistDialog2" timestamp="1605017570676">
+    <state x="2371" y="88" width="1008" height="911" key="CommitChangelistDialog2" timestamp="1605079698055">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2371" y="88" width="1008" height="911" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605017570676" />
-    <state x="2663" y="298" width="424" height="491" key="FileChooserDialogImpl" timestamp="1605017654294">
+    <state x="2371" y="88" width="1008" height="911" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605079698055" />
+    <state x="2663" y="298" width="424" height="491" key="FileChooserDialogImpl" timestamp="1605096662463">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2663" y="298" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605017654294" />
+    <state x="2663" y="298" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605096662463" />
     <state width="1897" height="284" key="GridCell.Tab.0.bottom" timestamp="1605009629818">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -169,14 +188,14 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2511" y="302" width="728" height="482" key="MultipleFileMergeDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605017618231" />
-    <state x="2369" y="175" width="1022" height="737" key="SettingsEditor" timestamp="1605009970699">
+    <state x="2369" y="175" width="1022" height="737" key="SettingsEditor" timestamp="1605080021094">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2369" y="175" width="1022" height="737" key="SettingsEditor/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605009970699" />
-    <state x="2475" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1605017574316">
+    <state x="2369" y="175" width="1022" height="737" key="SettingsEditor/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605080021094" />
+    <state x="2475" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1605079703820">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2475" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605017574316" />
+    <state x="2475" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605079703820" />
     <state x="2661" y="455" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605009818106">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

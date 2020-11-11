@@ -20,4 +20,10 @@ export class LoginService {
   saveNewAccount(newAccount: Login) {
     return this.http.post('http://localhost:8080/account', newAccount);
   }
+
+  // tslint:disable-next-line:typedef
+  tryLogin(login: Login){
+    return this.http.post('http://localhost:8080/login', login);
+  }
+
 }

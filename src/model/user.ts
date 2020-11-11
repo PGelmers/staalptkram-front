@@ -1,5 +1,3 @@
-import {ItemForSale} from './item-for-sale';
-
 export class User {
 
   id: number;
@@ -8,5 +6,16 @@ export class User {
   email: string;
   telephone: string;
   registration: string;
+
+  toString(): string {
+    return 'User{' +
+      'firstName=' + this.firstName + '\n' +
+      ', surname=' + this.surname + '\n' +
+      ', email=' + this.email + '\n' +
+      ', telephone=' + this.telephone + '\n' +
+      ', registration=' + this.registration +
+      '}';
+}
+
 
 }
