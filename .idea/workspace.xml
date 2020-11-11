@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2752d7ff-4de3-4b5f-8fde-88095113e7e4" name="Default Changelist" comment="Test commit and push">
-      <change afterPath="$PROJECT_DIR$/src/app/login/login.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/login/login.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/login/login.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/login/login.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/user.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/user.ts" afterDir="false" />
+    <list default="true" id="2752d7ff-4de3-4b5f-8fde-88095113e7e4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/login.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +23,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1k5shQCe8KiBC9CrFRCqIwnzuOn" />
   <component name="ProjectViewState">
@@ -92,6 +87,7 @@
       <workItem from="1605001908099" duration="2553000" />
       <workItem from="1605006151794" duration="211000" />
       <workItem from="1605006366999" duration="3952000" />
+      <workItem from="1605017661393" duration="6869000" />
     </task>
     <task id="LOCAL-00001" summary="Test commit and push">
       <created>1605003351812</created>
@@ -114,28 +110,45 @@
       <option name="project" value="LOCAL" />
       <updated>1605014734392</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Made all components and models for user and account">
+      <created>1605017570807</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605017570807</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Test commit and push" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test commit and push" />
+    <MESSAGE value="Made all components and models for user and account" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made all components and models for user and account" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2371" y="88" width="1008" height="911" key="CommitChangelistDialog2" timestamp="1605014734050">
+    <state x="2371" y="88" width="1008" height="911" key="CommitChangelistDialog2" timestamp="1605017570676">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2371" y="88" width="1008" height="911" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605014734050" />
-    <state x="2663" y="298" width="424" height="491" key="FileChooserDialogImpl" timestamp="1605006360916">
+    <state x="2371" y="88" width="1008" height="911" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605017570676" />
+    <state x="2663" y="298" width="424" height="491" key="FileChooserDialogImpl" timestamp="1605017654294">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2663" y="298" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605006360916" />
+    <state x="2663" y="298" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605017654294" />
     <state width="1897" height="284" key="GridCell.Tab.0.bottom" timestamp="1605009629818">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -152,14 +165,18 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1897" height="284" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605009629818" />
+    <state x="2511" y="302" width="728" height="482" key="MultipleFileMergeDialog" timestamp="1605017618231">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2511" y="302" width="728" height="482" key="MultipleFileMergeDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605017618231" />
     <state x="2369" y="175" width="1022" height="737" key="SettingsEditor" timestamp="1605009970699">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2369" y="175" width="1022" height="737" key="SettingsEditor/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605009970699" />
-    <state x="2475" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1605014878209">
+    <state x="2475" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1605017574316">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2475" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605014878209" />
+    <state x="2475" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605017574316" />
     <state x="2661" y="455" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605009818106">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
