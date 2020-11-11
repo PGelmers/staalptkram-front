@@ -1,0 +1,47 @@
+<h1>Items For Sale:</h1>
+
+<hr>
+
+<p>Filter category:</p>
+<input type="radio" id="ALL" name="filter" value="ALL" [(ngModel)]="filter">
+<label for="ALL">All Categories</label><br>
+<input type="radio" id="KNIKKERS" name="filter" value="KNIKKERS" [(ngModel)]="filter">
+<label for="KNIKKERS">Knikkers</label><br>
+<input type="radio" id="POKEMONKAARTEN" name="filter" value="POKEMONKAARTEN" [(ngModel)]="filter">
+<label for="POKEMONKAARTEN">Pokemonkaarten</label><br>
+<input type="radio" id="FIETSEN" name="filter" value="FIETSEN" [(ngModel)]="filter">
+<label for="FIETSEN">Fietsen</label><br>
+<button (click)="filter_search(filter)">Filter</button>
+
+<hr>
+
+<label for="sortby">Sort by: </label>
+<select id="sortby" name="sortby" [(ngModel)]="sortbyvalue">
+  <option value="ID">ID</option>
+  <option value="Title">Title</option>
+  <option value="Price">Price</option>
+  <option value="Category">Category</option>
+</select>
+<input type="submit" id="sort_function"(click)="sort_by(sortbyvalue)">
+
+<hr>
+
+<table>
+  <tr>
+    <td>ID:</td>
+    <td>Title:</td>
+    <td>Description:</td>
+    <td>Price:</td>
+    <td>Category:</td>
+    <td>User:</td>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td>{{product.id}}</td>
+    <td>{{product.title}}</td>
+    <td>{{product.description}}</td>
+    <td>${{product.price}}</td>
+    <td>{{product.category}}</td>
+    <td>{{product.user}}</td>
+    <td><button (click)="delete(product.id)">del</button></td>
+  </tr>
+</table>

@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "staalptkram-front"
+    }
+  },
+  "defaultProject": "staalptkram-front",
+  "cli": {
+    "analytics": false
+  }
 }

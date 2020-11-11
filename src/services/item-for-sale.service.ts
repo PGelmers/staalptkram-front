@@ -18,9 +18,20 @@ export class ItemForSaleService {
   };
 
   constructor(
-    // TODO: message service maken.
     private http: HttpClient,
     private messageService, MessageService) { }
+
+  findAll(): Observable<ItemForSale[]>  {
+    return this.http.get<any>('http://localhost:8080/products')
+  }
+
+  save(product: ItemForSale) {
+    return this.http.post('http://localhost:8080/product', product)
+  }
+
+  delete(id) {
+    return this.http.delete('http://localhost:8080/product/' + id)
+  }
 
   updateItemForSale(itemForSale: ItemForSale): Observable<any> {
     return this.http.put(this.itemForSaleUrl, itemForSale, this.httpOptions).pipe(
