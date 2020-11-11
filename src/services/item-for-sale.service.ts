@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
-import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import {Observable, of} from 'rxjs';
+import {catchError, tap} from 'rxjs/operators';
 
-import { ItemForSale } from './model/item-for-sale';
+import {ItemForSale} from '../model/item-for-sale';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +18,9 @@ export class ItemForSaleService {
   };
 
   constructor(
-    private http: HttpClient
-  ) { }
+    // TODO: message service maken.
+    private http: HttpClient,
+    private messageService, MessageService) { }
 
   updateItemForSale(itemForSale: ItemForSale): Observable<any> {
     return this.http.put(this.itemForSaleUrl, itemForSale, this.httpOptions).pipe(
@@ -28,15 +29,16 @@ export class ItemForSaleService {
     );
   }
 
+  // tslint:disable-next-line:typedef
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
       this.log(`${operation} failed: ${error.message}`);
-
       return of(result as T);
-      };
-    }
+    };
+  }
 
+  // tslint:disable-next-line:typedef
   private log(message: string) {
     this.messageService.add(`ItemForSaleService: ${message}`);
   }
