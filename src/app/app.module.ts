@@ -25,3 +25,4 @@ import { NewUserComponent } from './new-user/new-user.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

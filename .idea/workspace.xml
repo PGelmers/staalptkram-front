@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2752d7ff-4de3-4b5f-8fde-88095113e7e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/new-user/new-user.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/new-user/new-user.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/new-user/new-user.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/new-user/new-user.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/login.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/login.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/user.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/login.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +98,7 @@
       <workItem from="1605017661393" duration="6869000" />
       <workItem from="1605079462781" duration="641000" />
       <workItem from="1605080123692" duration="12577000" />
-      <workItem from="1605098820226" duration="2346000" />
+      <workItem from="1605098820226" duration="3065000" />
     </task>
     <task id="LOCAL-00001" summary="Test commit and push">
       <created>1605003351812</created>
@@ -135,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605079698292</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="login and new-user works!&#10;Made a start with routing.">
+      <created>1605101229476</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1605101229477</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,13 +164,14 @@
     <MESSAGE value="Test commit and push" />
     <MESSAGE value="Made all components and models for user and account" />
     <MESSAGE value="Ready for testing new-user-component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ready for testing new-user-component" />
+    <MESSAGE value="login and new-user works!&#10;Made a start with routing." />
+    <option name="LAST_COMMIT_MESSAGE" value="login and new-user works!&#10;Made a start with routing." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2371" y="88" width="1008" height="911" key="CommitChangelistDialog2" timestamp="1605079698055">
+    <state x="2371" y="88" width="1008" height="911" key="CommitChangelistDialog2" timestamp="1605101229156">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2371" y="88" width="1008" height="911" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605079698055" />
+    <state x="2371" y="88" width="1008" height="911" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605101229156" />
     <state x="2663" y="298" width="424" height="491" key="FileChooserDialogImpl" timestamp="1605096662463">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -192,10 +200,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2369" y="175" width="1022" height="737" key="SettingsEditor/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605080021094" />
-    <state x="2475" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1605079703820">
+    <state x="2475" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1605101232290">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2475" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605079703820" />
+    <state x="2475" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605101232290" />
     <state x="2661" y="455" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605009818106">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
