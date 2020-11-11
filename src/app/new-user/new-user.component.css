@@ -1,0 +1,4 @@
+div, input, p, button {
+  margin: 10px;
+  white-space: pre-line;
+}
