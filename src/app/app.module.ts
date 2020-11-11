@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
-import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { ItemsForSaleListComponent } from './items-for-sale-list/items-for-sale-list.component';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import {MessagesComponent} from './messages/messages.component';
@@ -12,6 +13,7 @@ import {MessagesComponent} from './messages/messages.component';
 @NgModule({
   declarations: [
     AppComponent,
+    ItemsForSaleListComponent,
     MessagesComponent,
     LoginComponent,
     NewUserComponent,
@@ -20,7 +22,8 @@ import {MessagesComponent} from './messages/messages.component';
     AppRoutingModule,
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
