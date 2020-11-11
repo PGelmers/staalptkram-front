@@ -1,11 +1,8 @@
-import {ItemForSale} from './item-for-sale';
+import {User} from './user';
 
 export class Login {
-  id: number;
-  firstName: string;
-  surname: string;
-  email: string;
-  telephone: string;
-  registration: string;
-  products: ItemForSale[];
+  username: string;
+  password: string;
+  user: User;
 }
+
