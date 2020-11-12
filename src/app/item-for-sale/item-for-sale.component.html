@@ -1,9 +1,10 @@
 <div *ngIf="itemForSale">
-  <h2>{{itemForSale.name | uppercase}} | {{itemForSale.id}} Details -- ({{itemForSale.category}})</h2>
-  <h3>{{itemForSale.name}}</h3>
+  <h2>{{itemForSale.title | uppercase}} | {{itemForSale.id}} Details -- ({{itemForSale.category}})</h2>
+  <h3>{{itemForSale.title}}</h3>
   <div>hiero een afbeelding</div>
   <div><span>Omschrijving: </span>{{itemForSale.description}}</div>
 
+  <p>knoppen misschien handig voor een edit functie, later.</p>
   <button (click)="goBack()">go back</button>
   <button (click)="save()">save</button>
 </div>

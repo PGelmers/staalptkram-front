@@ -5,6 +5,7 @@ import {Observable, of} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
 
 import {ItemForSale} from '../model/item-for-sale';
+import {MessageService} from './message.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,18 +20,28 @@ export class ItemForSaleService {
 
   constructor(
     private http: HttpClient,
-    private messageService, MessageService) { }
+    private messageService: MessageService) { }
 
   findAll(): Observable<ItemForSale[]>  {
-    return this.http.get<any>('http://localhost:8080/products')
+    return this.http.get<any>('http://localhost:8080/products');
   }
 
+  // tslint:disable-next-line:typedef
   save(product: ItemForSale) {
-    return this.http.post('http://localhost:8080/product', product)
+    return this.http.post('http://localhost:8080/product', product);
   }
 
+  // tslint:disable-next-line:typedef
   delete(id) {
-    return this.http.delete('http://localhost:8080/product/' + id)
+    return this.http.delete('http://localhost:8080/product/' + id);
+  }
+
+  getItemForSale(id: number): Observable<ItemForSale> {
+    const url = '${this.itemForSaleUrl}/${id}';
+    return this.http.get<ItemForSale>(url).pipe(
+      tap(_ => this.log(`fetched item id=${id}`)),
+      catchError(this.handleError<ItemForSale>(`getItemForSale id=${id}`))
+    );
   }
 
   updateItemForSale(itemForSale: ItemForSale): Observable<any> {

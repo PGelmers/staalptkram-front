@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Location} from '@angular/common';
 
-import { ItemForSale } from '../../model/item-for-sale';
-import { ItemForSaleService } from '../../services/item-for-sale.service';
+import {ItemForSale} from '../../model/item-for-sale';
+import {ItemForSaleService} from '../../services/item-for-sale.service';
 
 @Component({
   selector: 'app-item-for-sale',
@@ -13,6 +14,7 @@ export class ItemForSaleComponent implements OnInit {
   itemForSale: ItemForSale;
 
   constructor(
+    private route: ActivatedRoute,
     private itemForSaleService: ItemForSaleService,
     private location: Location
   ) { }
@@ -22,7 +24,10 @@ export class ItemForSaleComponent implements OnInit {
   }
 
   getItemForSale(): void {
-    // TODO: maken zodra de routing module werkt.
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.itemForSaleService.getItemForSale(id).subscribe(
+      itemForSale => this.itemForSale = itemForSale
+    );
   }
 
   goBack(): void {
