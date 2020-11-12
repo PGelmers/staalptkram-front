@@ -29,9 +29,7 @@ export class NewUserComponent implements OnInit {
             if (accountId === 0) {
               this.testString = 'Failure!';
             }else{
-              this.testString = 'Success! \n\nAccount with id ' + accountId + ' is saved in the DB. This account has the following properties: \nusername ' + this.newAccount.username +
-                '\nUser id: ' + returnedUser.id +
-                '\nFull name: ' + returnedUser.firstName + ' ' + returnedUser.surname;
+              this.testString = 'Success! \n\nAccount with id ' + accountId + ' is saved in the DB. This account has the following properties: \n\n';
             }
           }
         );
@@ -39,7 +37,7 @@ export class NewUserComponent implements OnInit {
     );
   }
 
-
 }
+
 
 // SOME LAYOUT IN LOCAL CSS FILE
