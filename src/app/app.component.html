@@ -1,3 +1,6 @@
+<script>
+  var global = window; // fix global is undefined in socketjs-client
+</script>
 
 <p> Navbar for testing purposes </p>
 
@@ -11,4 +14,12 @@
 <p>Hieronder in de HTML zit een router-outlet die doorstuurt naar de verschillende pagina's</p>
 
 <router-outlet></router-outlet>
+
+<input class="form-control" type="text" placeholder="message" [(ngModel)]="input">
+<button class="btn btn-success" (click)="sendMessage()">Send</button>
+<div class="content">
+  <div *ngFor="let msg of messageService.msg">
+    {{msg}}
+  </div>
+</div>
 
