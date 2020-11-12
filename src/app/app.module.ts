@@ -11,6 +11,8 @@ import { ItemsForSaleListComponent } from './items-for-sale-list/items-for-sale-
 import { LoginComponent } from './login/login.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import {MessagesComponent} from './messages/messages.component';
+import { StartScreenComponent } from './start-screen/start-screen.component';
+import { PersonalComponent } from './personal/personal.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import {MessagesComponent} from './messages/messages.component';
     MessagesComponent,
     LoginComponent,
     NewUserComponent,
+    StartScreenComponent,
+    PersonalComponent
   ],
   imports: [
     AppRoutingModule,

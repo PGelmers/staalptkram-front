@@ -15,7 +15,5 @@ export class User {
       ', telephone=' + this.telephone + '\n' +
       ', registration=' + this.registration +
       '}';
-}
-
-
+  }
 }

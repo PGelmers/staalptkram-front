@@ -1,7 +1,14 @@
 
-<app-items-for-sale-list></app-items-for-sale-list>
-<app-login></app-login>
+<p> Navbar for testing purposes </p>
 
-<app-new-user></app-new-user>
+<nav>
+  <a routerLink="/startscreen">Startscreen</a>
+  <a routerLink="/personal">Personal</a>
+  <a routerLink="/login">Login</a>
+  <a routerLink="/register">Register</a>
+</nav>
 
-<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+<p>Hieronder in de HTML zit een router-outlet die doorstuurt naar de verschillende pagina's</p>
+
+<router-outlet></router-outlet>
+
