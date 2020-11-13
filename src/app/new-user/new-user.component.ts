@@ -28,7 +28,7 @@ export class NewUserComponent implements OnInit {
           (accountId: number) => {
             if (accountId === 0) {
               this.testString = 'Failure!';
-            }else{
+            } else {
               this.testString = 'Success! \n\nAccount with id ' + accountId + ' is saved in the DB. This account has the following properties: \nusername ' + this.newAccount.username +
                 '\nUser id: ' + returnedUser.id +
                 '\nFull name: ' + returnedUser.firstName + ' ' + returnedUser.surname;

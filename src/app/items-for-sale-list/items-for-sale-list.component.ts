@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ItemForSale} from '../../model/item-for-sale';
 import {ItemForSaleService} from '../../services/item-for-sale.service';
 
@@ -29,6 +29,7 @@ export class ItemsForSaleListComponent implements OnInit {
       }
     );
   }
+
   delete(id) {
     this.itemForSaleService.delete(id).subscribe(
       () => this.reloadAll()
@@ -36,12 +37,14 @@ export class ItemsForSaleListComponent implements OnInit {
   }
 
   filter_search(filtercategory: string) {
-       this.itemForSaleService.findAll().subscribe(
+    this.itemForSaleService.findAll().subscribe(
       prds => {
         // tslint:disable-next-line:triple-equals
-        if (filtercategory == 'ALL') { this.reloadAll();}
-        else {
-        this.products = prds.filter(x => x.category === filtercategory); }
+        if (filtercategory == 'ALL') {
+          this.reloadAll();
+        } else {
+          this.products = prds.filter(x => x.category === filtercategory);
+        }
       },
       err => {
         console.log(err);
@@ -53,24 +56,41 @@ export class ItemsForSaleListComponent implements OnInit {
     this.itemForSaleService.findAll().subscribe(
       prds => {
         this.products = prds.sort((n1, n2) => {
-          if (sortbyvalue.toLocaleLowerCase() === 'id') {
-            if (n1.id > n2.id) { return 1; }
-            if (n1.id < n2.id) { return -1; }
-            return 0; }
-          else if (sortbyvalue.toLocaleLowerCase() === 'title') {
-            if (n1.title > n2.title) { return 1; }
-            if (n1.title < n2.title) { return -1; }
-            return 0; }
-          else if (sortbyvalue.toLocaleLowerCase() === 'price') {
-            if (n1.price > n2.price) { return 1; }
-            if (n1.price < n2.price) { return -1; }
-            return 0; }
-          else if (sortbyvalue.toLocaleLowerCase() === 'category') {
-            if (n1.category > n2.category) { return 1; }
-            if (n1.category < n2.category) { return -1; }
-            return 0; }
+            if (sortbyvalue.toLocaleLowerCase() === 'id') {
+              if (n1.id > n2.id) {
+                return 1;
+              }
+              if (n1.id < n2.id) {
+                return -1;
+              }
+              return 0;
+            } else if (sortbyvalue.toLocaleLowerCase() === 'title') {
+              if (n1.title > n2.title) {
+                return 1;
+              }
+              if (n1.title < n2.title) {
+                return -1;
+              }
+              return 0;
+            } else if (sortbyvalue.toLocaleLowerCase() === 'price') {
+              if (n1.price > n2.price) {
+                return 1;
+              }
+              if (n1.price < n2.price) {
+                return -1;
+              }
+              return 0;
+            } else if (sortbyvalue.toLocaleLowerCase() === 'category') {
+              if (n1.category > n2.category) {
+                return 1;
+              }
+              if (n1.category < n2.category) {
+                return -1;
+              }
+              return 0;
+            }
           }
-          );
+        );
       },
       err => {
         console.log(err);

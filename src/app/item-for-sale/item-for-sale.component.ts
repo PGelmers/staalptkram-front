@@ -17,25 +17,27 @@ export class ItemForSaleComponent implements OnInit {
     private route: ActivatedRoute,
     private itemForSaleService: ItemForSaleService,
     private location: Location
-  ) { }
-
-  ngOnInit(): void {
-    this.getItemForSale();
+  ) {
   }
 
-  getItemForSale(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.itemForSaleService.getItemForSale(id).subscribe(
-      itemForSale => this.itemForSale = itemForSale
-    );
+  ngOnInit(): void {
+    this.getSingleItemForSale();
+  }
+
+  getSingleItemForSale(): void {
+    // const id = +this.route.snapshot.paramMap.get('id');
+    // this.itemForSaleService.getItemForSale(id).subscribe(
+    //   itemForSale => this.itemForSale = itemForSale
+    // );
+    this.itemForSaleService.getItemForSale(1).subscribe(itemForSale => this.itemForSale = itemForSale);
   }
 
   goBack(): void {
     this.location.back();
   }
 
-  save(): void {
-    this.itemForSaleService.updateItemForSale(this.itemForSale)
-      .subscribe(() => this.goBack());
-  }
+  // save(): void {
+  //   this.itemForSaleService.updateItemForSale(this.itemForSale)
+  //     .subscribe(() => this.goBack());
+  // }
 }

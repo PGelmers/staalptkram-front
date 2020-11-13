@@ -22,7 +22,7 @@
   <option value="Price">Price</option>
   <option value="Category">Category</option>
 </select>
-<input type="submit" id="sort_function"(click)="sort_by(sortbyvalue)">
+<input (click)="sort_by(sortbyvalue)" id="sort_function" type="submit">
 
 <hr>
 
@@ -42,6 +42,8 @@
     <td>${{product.price}}</td>
     <td>{{product.category}}</td>
     <td>{{product.user}}</td>
-    <td><button (click)="delete(product.id)">del</button></td>
+    <td>
+      <button (click)="delete(product.id)">del</button>
+    </td>
   </tr>
 </table>

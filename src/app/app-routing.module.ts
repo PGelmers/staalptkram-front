@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {AppComponent} from './app.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
   // {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -12,5 +11,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
 
