@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import * as Stomp from 'stompjs';
 import * as SockJS from 'sockjs-client';
+// import {Message} from '../model/message';
 
 // @ts-ignore
 @Injectable({
@@ -22,19 +23,24 @@ export class MessageServiceService {
     const serverUrl = 'http://localhost:8080/socket';
     const ws = new SockJS(serverUrl);
     this.stompClient = Stomp.over(ws);
-    const that = this;
-    // tslint:disable-next-line:only-arrow-functions typedef
-    this.stompClient.connect({}, function (frame) {
-      that.stompClient.subscribe('/message', (message) => {
-        if (message.body) {
-          that.msg.push(message.body);
+
+    this.stompClient.connect({}, () => {
+      this.stompClient.subscribe(
+        '/chat/' + '20' + '/queue/messages', (message) => {
+          if (message.body) {
+            this.msg.push(message.body);
+          }
         }
-      });
+      );
     });
   }
 
   // tslint:disable-next-line:typedef
   sendMessage(message) {
+    // const messageObj: Message = {
+    //   chat: {chatId: 20},
+    //   message: 'Rune, Jaap en Erik'
+    // };
     this.stompClient.send('/app/send/message', {}, message);
   }
 }
