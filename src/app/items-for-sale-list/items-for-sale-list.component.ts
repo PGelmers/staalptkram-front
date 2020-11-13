@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ItemForSale} from '../../model/item-for-sale';
 import {ItemForSaleService} from '../../services/item-for-sale.service';
 
@@ -30,6 +30,7 @@ export class ItemsForSaleListComponent implements OnInit {
       }
     );
   }
+
   delete(id) {
     this.itemForSaleService.delete(id).subscribe(
       () => this.reloadAll()
@@ -39,20 +40,27 @@ export class ItemsForSaleListComponent implements OnInit {
   search(filtercategory: string, sortbyvalue: string) {
     this.itemForSaleService.findAll().subscribe(
       prds => {
-        if (filtercategory === undefined ) {filtercategory = 'ALL'; }
-        if (sortbyvalue === undefined ) {sortbyvalue = 'ID'; }
-        if (filtercategory.toLocaleLowerCase() !== 'all') {prds = prds.filter(x => x.category === filtercategory); }
+        if (filtercategory === undefined) {
+          filtercategory = 'ALL';
+        }
+        if (sortbyvalue === undefined) {
+          sortbyvalue = 'ID';
+        }
+        if (filtercategory.toLocaleLowerCase() !== 'all') {
+          prds = prds.filter(x => x.category === filtercategory);
+        }
         sortbyvalue = sortbyvalue.toLocaleLowerCase();
         this.products = prds
           .sort((n1, n2) => {
-                              // tslint:disable-next-line:no-eval
-                if (eval('n1.'+ sortbyvalue) > eval('n2.'+ sortbyvalue)) {
-                  return 1;
-                }
-                if (eval('n1.'+ sortbyvalue) < eval('n2.'+ sortbyvalue)) {
-                  return -1;
-                }
-                return 0; }
+              // tslint:disable-next-line:no-eval
+              if (eval('n1.' + sortbyvalue) > eval('n2.' + sortbyvalue)) {
+                return 1;
+              }
+              if (eval('n1.' + sortbyvalue) < eval('n2.' + sortbyvalue)) {
+                return -1;
+              }
+              return 0;
+            }
           );
       },
       err => {
@@ -64,7 +72,8 @@ export class ItemsForSaleListComponent implements OnInit {
   filter_user(id: number) {
     this.itemForSaleService.findAll().subscribe(
       prds => {
-          this.products = prds.filter(x => x.user.id === id); },
+        this.products = prds.filter(x => x.user.id === id);
+      },
       err => {
         console.log(err);
       }

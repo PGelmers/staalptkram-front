@@ -22,7 +22,8 @@
 <!--<input type="submit" id="sort_function" (click)="sort_by(sortbyvalue)">-->
 
 <br><br>
-Apply all filters: <button (click)="search(filter, sortbyvalue)">Search</button>
+Apply all filters:
+<button (click)="search(filter, sortbyvalue)">Search</button>
 
 <hr>
 
@@ -48,6 +49,8 @@ I only want to see the products of user:
     <td>${{product.price}}</td>
     <td>{{product.category}}</td>
     <td>{{product.user.id}}</td>
-    <td><button (click)="delete(product.id)">DELETE</button></td>
+    <td>
+      <button (click)="delete(product.id)">DELETE</button>
+    </td>
   </tr>
 </table>

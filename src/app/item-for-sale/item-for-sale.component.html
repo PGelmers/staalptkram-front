@@ -1,0 +1,10 @@
+<div *ngIf="itemForSale">
+  <h2>{{itemForSale.title | uppercase}} | Details</h2>
+  <h3>Categorie: {{itemForSale.category}}</h3>
+  <p>
+    Item id: {{itemForSale.id}}<br>
+    Omschrijving: <br>{{itemForSale.description}}
+
+  </p>
+  <button (click)="goBack()">go back</button>
+</div>
