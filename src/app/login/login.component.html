@@ -1,8 +1,22 @@
+<div id="container-login" class="container">
+  <h1> Log-in existing user</h1>
+  <form>
+    <div class="form-group">
+      <label for="usernameInput">Username</label>
+      <input class="form-control" type="text" placeholder="Username" id="usernameInput" [(ngModel)]="login.username" name="username">
+    </div>
+    <div class="form-group">
+      <label for="passwordInput">Password</label>
+      <input class="form-control" type="password" placeholder="Password" id="passwordInput" [(ngModel)]="login.password" name="password">
+    </div>
+    <div class="form-group d-flex justify-content-center">
+      <button type="button" (click)="tryLogin()" class="btn btn-primary">Log in</button>
+    </div>
+    <div class="form-group">
+      <pre id="testString"> {{testString2}} {{user | json}}</pre>
+    </div>
+  </form>
+</div>
 
-<p>{{testString_2}}</p>
 
-<input type="text" placeholder="username" [(ngModel)]="login.username">
-<input type="password" placeholder="password" [(ngModel)]="login.password">
-
-<button (click)="tryLogin()">Log in</button>
-
+<!--SOME CSS IN LOCAL CSS FILE-->

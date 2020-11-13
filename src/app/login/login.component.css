@@ -1,4 +1,13 @@
-div, input, p, button {
-  margin: 10px;
-  white-space: pre-line;
+#container-login{
+  /*border: maroon;*/
+  /*border-style:solid;*/
+  max-width: 400px;
+}
+
+#container-login label{
+  margin-top:15px;
+}
+
+#testString{
+  width:100%;
 }
