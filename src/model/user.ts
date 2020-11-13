@@ -7,13 +7,13 @@ export class User {
   telephone: string;
   registration: string;
 
-  toString(): string {
+  public myString(): string {
     return 'User{' +
-      'firstName=' + this.firstName + '\n' +
-      ', surname=' + this.surname + '\n' +
-      ', email=' + this.email + '\n' +
-      ', telephone=' + this.telephone + '\n' +
-      ', registration=' + this.registration +
+      '\tfirstName=' + this.firstName + '\n' +
+      ',\tsurname=' + this.surname + '\n' +
+      ',\temail=' + this.email + '\n' +
+      ',\ttelephone=' + this.telephone + '\n' +
+      ',\tregistration=' + this.registration + '\n' +
       '}';
   }
 

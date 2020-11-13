@@ -11,7 +11,7 @@ import {LoginService} from '../../services/login.service';
 export class LoginComponent implements OnInit {
   login = new Login();
   user = new User();
-  testString_2 = 'The purpose of this string is for testing';
+  testString2 = 'The purpose of this string is for testing';
 
   constructor(public loginService: LoginService) {
   }
@@ -24,9 +24,9 @@ export class LoginComponent implements OnInit {
       (returnedUser: User) => {
         this.user = returnedUser;
         if (returnedUser.firstName == null) {
-          this.testString_2 = 'Failed to login!';
+          this.testString2 = 'Failed to login!';
         } else {
-          this.testString_2 = 'Success! \n\nUser with id ' + returnedUser.id + ' has logged in. This account has the following properties: \n\n' + returnedUser.toString();
+          this.testString2 = 'Success! \n\nUser with id ' + returnedUser.id + ' has logged in. \n\n';
         }
       }
     );
