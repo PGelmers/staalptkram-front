@@ -1,14 +1,10 @@
-<!--<div *ngIf="itemForSale">-->
-<!--  <h2>{{itemForSale.title | uppercase}} | {{itemForSale.id}} Details &#45;&#45; ({{itemForSale.category}})</h2>-->
-<!--  <h3>{{itemForSale.title}}</h3>-->
-<!--&lt;!&ndash;  <div>hiero een afbeelding</div>&ndash;&gt;-->
+<div *ngIf="itemForSale">
+  <h2>{{itemForSale.title | uppercase}} | Details</h2>
+  <h3>Categorie: {{itemForSale.category}}</h3>
+  <p>
+    Item id: {{itemForSale.id}}<br>
+    Omschrijving: <br>{{itemForSale.description}}
 
-<!--  <div><span>Omschrijving: </span>{{itemForSale.description}}</div>-->
-
-<!--  <p>knoppen misschien handig voor een edit functie, later.</p>-->
-<!--  <button (click)="goBack()">go back</button>-->
-<!--&lt;!&ndash;  <button (click)="save()">save</button>&ndash;&gt;-->
-<!--</div>-->
-
-
-<h2>{{itemForSale.title | uppercase}}</h2>
+  </p>
+  <button (click)="goBack()">go back</button>
+</div>

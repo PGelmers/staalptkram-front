@@ -5,38 +5,29 @@ import {Observable, of} from 'rxjs';
 
 import {ItemForSale} from '../model/item-for-sale';
 import {MessageService} from './message.service';
+import {catchError, tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ItemForSaleService {
+  private itemForSaleUrl = 'http://localhost:8080/product';
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   };
-  private itemForSaleUrl = 'http://localhost:8080/product';
 
   constructor(
     private http: HttpClient,
     private messageService: MessageService) {
   }
 
-  // getAllItemsForSale(): Observable<ItemForSale[]> {
-  //   return this.http.get<ItemForSale[]>(this.itemForSaleUrl)
-  //     .pipe(
-  //       tap(_ => this.log(`fetched items for sale`)),
-  //       catchError(this.handleError<ItemForSale[]>('getItemsForSale', []))
-  //     );
-  // }
-
   getItemForSale(id: number): Observable<ItemForSale> {
     const url = `${this.itemForSaleUrl}/${id}`;
 
-    // return this.http.get<ItemForSale>(url).pipe(
-    //   tap(_ => this.log(`fetched item id=${id}`)),
-    //   catchError(this.handleError<ItemForSale>(`getItemForSale id=${id}`))
-    // );
-
-    return this.http.post<ItemForSale>(url, id);
+    return this.http.post<ItemForSale>(url, id).pipe(
+      tap(_ => this.log(`fetched item id=${id}`)),
+      catchError(this.handleError<ItemForSale>(`getItemForSale id=${id}`))
+    );
   }
 
   findAll(): Observable<ItemForSale[]> {
@@ -52,13 +43,6 @@ export class ItemForSaleService {
   delete(id) {
     return this.http.delete('http://localhost:8080/product/' + id);
   }
-
-  // updateItemForSale(itemForSale: ItemForSale): Observable<any> {
-  //   return this.http.put(this.itemForSaleUrl, itemForSale, this.httpOptions).pipe(
-  //     tap(_ => this.log(`updated item for sale id=${itemForSale.id}`)),
-  //     catchError(this.handleError<any>(`updateItemForSale`))
-  //   );
-  // }
 
   // tslint:disable-next-line:typedef
   private handleError<T>(operation = 'operation', result?: T) {
