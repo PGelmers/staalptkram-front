@@ -1,8 +1,10 @@
+import {User} from './user';
+
 export class ItemForSale {
   id: number;
   title: string;
   price: number;
   description: string;
-  user: number;
   category: string;
+  user: User;
 }
