@@ -16,6 +16,4 @@ export class User {
       ', registration=' + this.registration +
       '}';
 }
-
-
 }

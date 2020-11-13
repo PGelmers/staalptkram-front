@@ -11,6 +11,7 @@ export class ItemsForSaleListComponent implements OnInit {
   products: ItemForSale[];
   filter: string;
   sortbyvalue: string;
+  filteruserid: number;
 
   constructor(private itemForSaleService: ItemForSaleService) {
   }
@@ -35,13 +36,24 @@ export class ItemsForSaleListComponent implements OnInit {
     );
   }
 
-  filter_search(filtercategory: string) {
-       this.itemForSaleService.findAll().subscribe(
+  search(filtercategory: string, sortbyvalue: string) {
+    this.itemForSaleService.findAll().subscribe(
       prds => {
-        // tslint:disable-next-line:triple-equals
-        if (filtercategory == 'ALL') { this.reloadAll();}
-        else {
-        this.products = prds.filter(x => x.category === filtercategory); }
+        if (filtercategory === undefined ) {filtercategory = 'ALL'; }
+        if (sortbyvalue === undefined ) {sortbyvalue = 'ID'; }
+        if (filtercategory.toLocaleLowerCase() !== 'all') {prds = prds.filter(x => x.category === filtercategory); }
+        sortbyvalue = sortbyvalue.toLocaleLowerCase();
+        this.products = prds
+          .sort((n1, n2) => {
+                              // tslint:disable-next-line:no-eval
+                if (eval('n1.'+ sortbyvalue) > eval('n2.'+ sortbyvalue)) {
+                  return 1;
+                }
+                if (eval('n1.'+ sortbyvalue) < eval('n2.'+ sortbyvalue)) {
+                  return -1;
+                }
+                return 0; }
+          );
       },
       err => {
         console.log(err);
@@ -49,29 +61,10 @@ export class ItemsForSaleListComponent implements OnInit {
     );
   }
 
-  sort_by(sortbyvalue: string) {
+  filter_user(id: number) {
     this.itemForSaleService.findAll().subscribe(
       prds => {
-        this.products = prds.sort((n1, n2) => {
-          if (sortbyvalue.toLocaleLowerCase() === 'id') {
-            if (n1.id > n2.id) { return 1; }
-            if (n1.id < n2.id) { return -1; }
-            return 0; }
-          else if (sortbyvalue.toLocaleLowerCase() === 'title') {
-            if (n1.title > n2.title) { return 1; }
-            if (n1.title < n2.title) { return -1; }
-            return 0; }
-          else if (sortbyvalue.toLocaleLowerCase() === 'price') {
-            if (n1.price > n2.price) { return 1; }
-            if (n1.price < n2.price) { return -1; }
-            return 0; }
-          else if (sortbyvalue.toLocaleLowerCase() === 'category') {
-            if (n1.category > n2.category) { return 1; }
-            if (n1.category < n2.category) { return -1; }
-            return 0; }
-          }
-          );
-      },
+          this.products = prds.filter(x => x.user.id === id); },
       err => {
         console.log(err);
       }
