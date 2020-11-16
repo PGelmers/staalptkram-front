@@ -9,8 +9,8 @@ import {ItemForSaleService} from '../../services/item-for-sale.service';
 })
 export class ItemsForSaleListComponent implements OnInit {
   products: ItemForSale[];
-  filter: string;
-  sortbyvalue: string;
+  filter = 'ALL';
+  sortbyvalue = 'ID';
   filteruserid: number;
 
   constructor(private itemForSaleService: ItemForSaleService) {
@@ -32,16 +32,14 @@ export class ItemsForSaleListComponent implements OnInit {
   }
   delete(id) {
     this.itemForSaleService.delete(id).subscribe(
-      () => this.reloadAll()
+      () => this.search(this.filter, this.sortbyvalue)
     );
   }
 
   search(filtercategory: string, sortbyvalue: string) {
     this.itemForSaleService.findAll().subscribe(
       prds => {
-        if (filtercategory === undefined ) {filtercategory = 'ALL'; }
-        if (sortbyvalue === undefined ) {sortbyvalue = 'ID'; }
-        if (filtercategory.toLocaleLowerCase() !== 'all') {prds = prds.filter(x => x.category === filtercategory); }
+        if (filtercategory.toLocaleLowerCase() !== 'all') {prds = prds.filter(x => x.category.toLocaleLowerCase() === filtercategory.toLocaleLowerCase()); }
         sortbyvalue = sortbyvalue.toLocaleLowerCase();
         this.products = prds
           .sort((n1, n2) => {
@@ -69,5 +67,9 @@ export class ItemsForSaleListComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  setsortvalue(sortvalue: string) {
+    this.sortbyvalue = sortvalue;
   }
 }

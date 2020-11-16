@@ -1,28 +1,28 @@
 <h1>Items For Sale:</h1>
 
 <p>Filter Category:</p>
-<input type="radio" id="ALL" name="filter" value="ALL" [(ngModel)]="filter">
+<input type="radio"  id="ALL" name="filter" value="ALL" [(ngModel)]="filter">
 <label for="ALL">All Categories</label><br>
 <input type="radio" id="KNIKKERS" name="filter" value="KNIKKERS" [(ngModel)]="filter">
 <label for="KNIKKERS">Knikkers</label><br>
 <input type="radio" id="POKEMONKAARTEN" name="filter" value="POKEMONKAARTEN" [(ngModel)]="filter">
 <label for="POKEMONKAARTEN">Pokemonkaarten</label><br>
 <input type="radio" id="FIETSEN" name="filter" value="FIETSEN" [(ngModel)]="filter">
-<label for="FIETSEN">Fietsen</label><br><br>
-<!--<button (click)="filter_search(filter)">Filter</button>-->
+<label for="FIETSEN">Fietsen</label><br>
+<button (click)="search(filter, sortbyvalue)">Filter</button>
 
-<label for="sortby">Sort by: </label>
-<select id="sortby" name="sortby" [(ngModel)]="sortbyvalue">
-  <option value="ID">ID</option>
-  <option value="Title">Title</option>
-  <option value="Price">Price</option>
-  <option value="Category">Category</option>
-  <option value="User">User</option>
-</select>
+<!--<label for="sortby">Sort by: </label>-->
+<!--<select id="sortby" name="sortby" [(ngModel)]="sortbyvalue">-->
+<!--  <option value="ID"[selected]=" true" >ID </option>-->
+<!--  <option value="Title">Title</option>-->
+<!--  <option value="Price">Price</option>-->
+<!--  <option value="Category">Category</option>-->
+<!--  <option value="User">User</option>-->
+<!--</select>-->
 <!--<input type="submit" id="sort_function" (click)="sort_by(sortbyvalue)">-->
 
-<br><br>
-Apply all filters: <button (click)="search(filter, sortbyvalue)">Search</button>
+<!--<br><br>-->
+<!--Apply all filters: <button (click)="search(filter, sortbyvalue)">Search</button>-->
 
 <hr>
 
@@ -31,15 +31,17 @@ I only want to see the products of user:
 <button (click)="filter_user(filteruserid)">Show products</button>
 
 <hr>
+<p>Category: {{filter}}</p>
+<p>Sorted by: {{sortbyvalue}}</p>
 
 <table>
   <tr>
-    <td>ID:</td>
-    <td>Title:</td>
-    <td>Description:</td>
-    <td>Price:</td>
-    <td>Category:</td>
-    <td>User:</td>
+    <td><button (click)="setsortvalue('id'); search(filter, sortbyvalue)">&darr;ID</button></td>
+    <td><button (click)="setsortvalue('title'); search(filter, sortbyvalue)">&darr;Title</button></td>
+    <td><button (click)="setsortvalue('description'); search(filter, sortbyvalue)">&darr;Description</button></td>
+    <td><button (click)="setsortvalue('price'); search(filter, sortbyvalue)">&darr;Price</button></td>
+    <td><button (click)="setsortvalue('category'); search(filter, sortbyvalue)">&darr;Category</button></td>
+    <td><button (click)="setsortvalue('user'); search(filter, sortbyvalue)">&darr;User</button></td>
   </tr>
   <tr *ngFor="let product of products">
     <td>{{product.id}}</td>
