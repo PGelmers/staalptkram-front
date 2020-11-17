@@ -1,37 +1,18 @@
 <div class="container row">
-  <div class="col-md-12">
-    <h1>Upload Image</h1>
+  <div class="col-lg-6">
+    <input type="text" class="form-control" id="product-ID" placeholder="product ID" [(ngModel)]="productID"
+           name="productID"/>
   </div>
+  <div class="col-lg-6">
+    <input type="button" (click)="getProduct()" value="Get images with this productID"></div>
 </div>
 
-<div class="container row">
-  <div class="col-md-6">
-    <input type="file" (change)="onFileChanged($event)"></div>
-  <div class="col-md-6">
-    <input type="button" (click)="onUpload()" value="upload">
-  </div>
-</div>
-<hr/>
+<!--DEZE CODE HIERONDER OM EEN FOTO OF MEERDERE FOTOS TE TONEN-->
 
 <div class="container row">
-  <div class="col-md-12">
-    <div *ngIf=message>{{message}}</div>
-  </div>
-</div>
-
-<div class="container row">
-  <div class="col-md-6">
-    <input type="text" class="form-control" id="name" placeholder="image ID" [(ngModel)]="imageID"
-           name="name"/>
-  </div>
-  <div class="col-md-6">
-    <input type="button" (click)="getImage()" value="Get Image"></div>
-</div>
-
-<div class="container row">
-  <div class="col-md-12">
-    <div *ngIf=retrievedImage>
-      <img [src]="retrievedImage">
+  <div class="col-lg-3" *ngFor="let image of this.product.images">
+    <div>
+      <img [src]="'data:' + image.type + ';base64,' + image.picByte">
     </div>
   </div>
 </div>

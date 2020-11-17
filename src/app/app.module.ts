@@ -15,6 +15,7 @@ import {StartScreenComponent} from './start-screen/start-screen.component';
 import {PersonalComponent} from './personal/personal.component';
 import {ItemForSaleComponent} from './item-for-sale/item-for-sale.component';
 import { PictureUploadRetrieveComponent } from './picture-upload-retrieve/picture-upload-retrieve.component';
+import { ImageUploadComponent } from './image-upload/image-upload.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PictureUploadRetrieveComponent } from './picture-upload-retrieve/pictur
     StartScreenComponent,
     PersonalComponent,
     ItemForSaleComponent,
-    PictureUploadRetrieveComponent
+    PictureUploadRetrieveComponent,
+    ImageUploadComponent
   ],
   imports: [
     AppRoutingModule,
