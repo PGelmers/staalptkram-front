@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ItemForSale} from '../../model/item-for-sale';
 import {ImageService} from '../../services/image.service';
 
@@ -12,6 +12,7 @@ export class ImageUploadComponent implements OnInit {
   selectedFile: File;
   message: string;
   imageName: any;
+  @Input('productID')
   productID: number;
   product = new ItemForSale();
 

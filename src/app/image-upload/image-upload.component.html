@@ -1,14 +1,13 @@
 <div class="container row">
   <div class="col-lg-12">
     <h1>Upload Image</h1>
+    <p>Upload image for product {{productID}}</p>
   </div>
 </div>
 
 <div class="container row">
   <div class="col-lg-6">
     <input type="file" (change)="onFileChanged($event)">
-    <input type="number" class="form-control" id="product_id" placeholder="Product ID" [(ngModel)]="productID"
-           name="productID"/>
   </div>
   <div class="col-lg-6">
     <input type="button" (click)="onUpload()" value="upload">
