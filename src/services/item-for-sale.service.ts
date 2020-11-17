@@ -24,7 +24,7 @@ export class ItemForSaleService {
   getItemForSale(id: number): Observable<ItemForSale> {
     const url = `${this.itemForSaleUrl}/${id}`;
 
-    return this.http.post<ItemForSale>(url, id).pipe(
+    return this.http.get<ItemForSale>(url).pipe(
       tap(_ => this.log(`fetched item id=${id}`)),
       catchError(this.handleError<ItemForSale>(`getItemForSale id=${id}`))
     );
