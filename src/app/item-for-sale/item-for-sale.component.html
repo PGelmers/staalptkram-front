@@ -4,7 +4,17 @@
   <p>
     Item id: {{itemForSale.id}}<br>
     Omschrijving: <br>{{itemForSale.description}}
-
   </p>
+
+  <div class="container row">
+    <div class="col-lg-3" *ngFor="let image of this.itemForSale.images">
+      <div>
+        <img [src]="'data:' + image.type + ';base64,' + image.picByte">
+      </div>
+    </div>
+  </div>
+
   <button (click)="goBack()">go back</button>
 </div>
+
+<!--CSS CODE BIJ DIT COMPONENT TE VINDEN IN LOKAAL CSS FILE-->
