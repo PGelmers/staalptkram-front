@@ -15,7 +15,7 @@ export class User {
       ',\ttelephone=' + this.telephone + '\n' +
       ',\tregistration=' + this.registration + '\n' +
       '}';
-}
+  }
 
 
 }

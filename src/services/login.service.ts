@@ -22,7 +22,7 @@ export class LoginService {
   }
 
   // tslint:disable-next-line:typedef
-  tryLogin(login: Login){
+  tryLogin(login: Login) {
     return this.http.post('http://localhost:8080/login', login);
   }
 

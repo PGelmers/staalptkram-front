@@ -1,6 +1,4 @@
 #container-register{
-  /*border: maroon;*/
-  /*border-style:solid;*/
   max-width: 400px;
 }
 
@@ -10,4 +8,8 @@
 
 #testString{
   width:100%;
+}
+
+.form-control{
+  margin-bottom:5px;
 }

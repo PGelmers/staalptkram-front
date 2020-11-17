@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {StartScreenComponent} from './start-screen/start-screen.component';
 import {LoginComponent} from './login/login.component';
 import {NewUserComponent} from './new-user/new-user.component';
@@ -18,5 +18,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
 
