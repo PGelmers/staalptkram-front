@@ -5,6 +5,7 @@ import {LoginComponent} from './login/login.component';
 import {NewUserComponent} from './new-user/new-user.component';
 import {PersonalComponent} from './personal/personal.component';
 import {ItemsForSaleListComponent} from './items-for-sale-list/items-for-sale-list.component';
+import {ItemForSaleComponent} from './item-for-sale/item-for-sale.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/startscreen', pathMatch: 'full'},
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: NewUserComponent},
   {path: 'personal', component: PersonalComponent},
-  {path: 'productlist', component: ItemsForSaleListComponent}
+  {path: 'productlist', component: ItemsForSaleListComponent},
+  {path: 'product/:productid', component: ItemForSaleComponent}
 ];
 
 @NgModule({

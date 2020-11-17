@@ -11,5 +11,11 @@
 <p>User ID: <input type="number" [(ngModel)]="user.id" name="user_id" placeholder="user id"></p>
 
 
-
 <button (click)="save()">Upload Product</button>
+
+<div *ngIf="!productIsUploaded">
+  <p>Upload your product. You can then upload one or more images of your product.</p>
+</div>
+<div *ngIf="productIsUploaded">
+  <app-image-upload [productID]="product.id"></app-image-upload>
+</div>
