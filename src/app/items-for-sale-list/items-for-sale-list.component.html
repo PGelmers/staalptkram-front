@@ -1,57 +1,91 @@
-<h1>Items For Sale:</h1>
+<div class="container">
 
-<p>Filter Category:</p>
-<input type="radio"  id="ALL" name="filter" value="ALL" [(ngModel)]="filter">
-<label for="ALL">All Categories</label><br>
-<input type="radio" id="KNIKKERS" name="filter" value="KNIKKERS" [(ngModel)]="filter">
-<label for="KNIKKERS">Knikkers</label><br>
-<input type="radio" id="POKEMONKAARTEN" name="filter" value="POKEMONKAARTEN" [(ngModel)]="filter">
-<label for="POKEMONKAARTEN">Pokemonkaarten</label><br>
-<input type="radio" id="FIETSEN" name="filter" value="FIETSEN" [(ngModel)]="filter">
-<label for="FIETSEN">Fietsen</label><br>
-<button (click)="search(filter, sortbyvalue)">Filter</button>
+  <h1>Items For Sale:</h1>
 
-<!--<label for="sortby">Sort by: </label>-->
-<!--<select id="sortby" name="sortby" [(ngModel)]="sortbyvalue">-->
-<!--  <option value="ID"[selected]=" true" >ID </option>-->
-<!--  <option value="Title">Title</option>-->
-<!--  <option value="Price">Price</option>-->
-<!--  <option value="Category">Category</option>-->
-<!--  <option value="User">User</option>-->
-<!--</select>-->
-<!--<input type="submit" id="sort_function" (click)="sort_by(sortbyvalue)">-->
+  <div class="form-group">
+    <div class="row">
+      <div class="col-3">
+        <p>Filter Category:</p>
+        <input class="form-check-input" type="radio" id="ALL" name="filter" value="ALL" [(ngModel)]="filter">
+        <label class="form-check-label" for="ALL">All Categories</label><br>
+        <input class="form-check-input" type="radio" id="KNIKKERS" name="filter" value="KNIKKERS" [(ngModel)]="filter">
+        <label class="form-check-label" for="KNIKKERS">Knikkers</label><br>
+        <input class="form-check-input" type="radio" id="POKEMONKAARTEN" name="filter" value="POKEMONKAARTEN"
+               [(ngModel)]="filter">
+        <label class="form-check-label" for="POKEMONKAARTEN">Pokemonkaarten</label><br>
+        <input class="form-check-input" type="radio" id="FIETSEN" name="filter" value="FIETSEN" [(ngModel)]="filter">
+        <label class="form-check-label" for="FIETSEN">Fietsen</label><br>
+      </div>
+      <div class="col-3">
+        <button input class="btn btn-light" (click)="search(filter, sortbyvalue)">Filter</button>
+      </div>
+    </div>
 
-<br><br>
-Apply all filters: <button (click)="search(filter, sortbyvalue)">Search</button>
+    <!--    FOR TESTING PURPOSES-->
 
-<hr>
+    <!--    <br><br>-->
+    <!--    Apply all filters:-->
+    <!--    <button input class="btn btn-light" (click)="search(filter, sortbyvalue)">Search</button>-->
 
-I only want to see the products of user:
-<input type="number" id="filter_user" name="filter_user" min="1" max="2" [(ngModel)]="filteruserid">
-<button (click)="filter_user(filteruserid)">Show products</button>
+    <hr>
 
-<hr>
-<p>Category: {{filter}}</p>
-<p>Sorted by: {{sortbyvalue}}</p>
+    I only want to see the products of user:
+    <input input class="form-control-input" type="number" id="filter_user" name="filter_user" min="1" max="2"
+           [(ngModel)]="filteruserid">
+    <button input class="btn btn-light" (click)="filter_user(filteruserid)">Show products</button>
 
-<table>
-  <tr>
-    <td><button (click)="setsortvalue('id'); search(filter, sortbyvalue)">&darr;ID</button></td>
-    <td><button (click)="setsortvalue('title'); search(filter, sortbyvalue)">&darr;Title</button></td>
-    <td><button (click)="setsortvalue('description'); search(filter, sortbyvalue)">&darr;Description</button></td>
-    <td><button (click)="setsortvalue('price'); search(filter, sortbyvalue)">&darr;Price</button></td>
-    <td><button (click)="setsortvalue('category'); search(filter, sortbyvalue)">&darr;Category</button></td>
-    <td><button (click)="setsortvalue('user'); search(filter, sortbyvalue)">&darr;User</button></td>
-  </tr>
-  <tr *ngFor="let product of products">
-    <td>{{product.id}}</td>
-    <td>{{product.title}}</td>
-    <td>{{product.description}}</td>
-    <td>${{product.price}}</td>
-    <td>{{product.category}}</td>
-    <td>{{product.user.id}}</td>
-    <td>
-      <button (click)="delete(product.id)">DELETE</button>
-    </td>
-  </tr>
-</table>
+    <hr>
+    <p>Category: {{filter}}</p>
+    <p>Sorted by: {{sortbyvalue}}</p>
+
+    <table>
+      <tr>
+        <td>
+          <button input class="btn btn-light" (click)="setsortvalue('id'); search(filter, sortbyvalue)">&darr;ID
+          </button>
+        </td>
+        <td>
+          <button input class="btn btn-light" (click)="setsortvalue('title'); search(filter, sortbyvalue)">&darr;Title
+          </button>
+        </td>
+        <td>
+          <button input class="btn btn-light" (click)="setsortvalue('description'); search(filter, sortbyvalue)">&darr;Description</button>
+        </td>
+        <td>
+          <button input class="btn btn-light" (click)="setsortvalue('price'); search(filter, sortbyvalue)">&darr;Price
+          </button>
+        </td>
+        <td>
+          <button input class="btn btn-light" (click)="setsortvalue('category'); search(filter, sortbyvalue)">&darr;Category</button>
+        </td>
+        <td>
+          <button input class="btn btn-light" (click)="setsortvalue('user'); search(filter, sortbyvalue)">&darr;User
+          </button>
+        </td>
+        <td>First picture</td>
+      </tr>
+      <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.title}}</td>
+        <td>{{product.description}}</td>
+        <td>${{product.price}}</td>
+        <td>{{product.category}}</td>
+        <td>{{product.user.id}}</td>
+        <td>
+          <!--      ALLEEN DE EERSTE FOTO IN TABEL-->
+          <div class="image-container-self" *ngIf="this.product.images[0]">
+            <div>
+              <img [src]="'data:' + this.product.images[0].type + ';base64,' + this.product.images[0].picByte">
+            </div>
+          </div>
+        </td>
+        <td>
+          <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
+        </td>
+      </tr>
+    </table>
+
+
+  </div>
+</div>
+<!--CSS IN LOCAL CSS FILE!-->
