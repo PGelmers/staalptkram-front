@@ -15,11 +15,5 @@
 
 <router-outlet></router-outlet>
 
-<input class="form-control" type="text" placeholder="message" [(ngModel)]="input">
-<button class="btn btn-success" (click)="sendMessage()">Send</button>
-<div class="content">
-  <div *ngFor="let msg of messageService.msg">
-    {{msg}}
-  </div>
-</div>
+<app-messages></app-messages>
 
