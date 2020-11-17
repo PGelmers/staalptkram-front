@@ -6,7 +6,10 @@
 
 <div class="container row">
   <div class="col-md-6">
-    <input type="file" (change)="onFileChanged($event)"></div>
+    <input type="file" (change)="onFileChanged($event)">
+    <input type="number" class="form-control" id="product_id" placeholder="Product ID" [(ngModel)]="productID"
+           name="productID"/>
+  </div>
   <div class="col-md-6">
     <input type="button" (click)="onUpload()" value="upload">
   </div>
@@ -22,16 +25,24 @@
 <div class="container row">
   <div class="col-md-6">
     <input type="text" class="form-control" id="name" placeholder="image ID" [(ngModel)]="imageID"
-           name="name"/>
+           name="imageID"/>
+    <input type="text" class="form-control" id="product-ID" placeholder="product ID" [(ngModel)]="productID"
+           name="productID"/>
   </div>
   <div class="col-md-6">
     <input type="button" (click)="getImage()" value="Get Image"></div>
 </div>
 
 <div class="container row">
-  <div class="col-md-12">
-    <div *ngIf=retrievedImage>
-      <img [src]="retrievedImage">
+  <div class="col-md-12" *ngFor="let image of this.product.images">
+<!--        <p> {{image.picByte}}</p>-->
+    <!--  <div class="col-md-12">-->
+    <div>
+      <!--      <p> data:image/jpeg;base64,{{image.picByte}} </p>-->
+      <img [src]="'data:' + image.type + ';base64,' + image.picByte">
+      <!--      <img [src]="'data:image/jpeg;base64,' + this.retrievedImage">-->
+
     </div>
   </div>
+
 </div>
