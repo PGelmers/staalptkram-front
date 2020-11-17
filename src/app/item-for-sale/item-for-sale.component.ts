@@ -21,7 +21,7 @@ export class ItemForSaleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getSingleItemForSale(1);
+    this.getSingleItemForSale(Number(this.route.snapshot.paramMap.get('productid')));
   }
 
   getSingleItemForSale(id: number): void {

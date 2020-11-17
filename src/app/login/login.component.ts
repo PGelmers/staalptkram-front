@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Login} from '../../model/login';
 import {User} from '../../model/user';
 import {LoginService} from '../../services/login.service';
+import { GlobalConstants } from '../../common/global-constants';
 
 @Component({
   selector: 'app-login',
@@ -27,6 +28,7 @@ export class LoginComponent implements OnInit {
           this.testString2 = 'Failed to login!';
         } else {
           this.testString2 = 'Success! \n\nUser with id ' + returnedUser.id + ' has logged in. \n\n';
+          GlobalConstants.user = this.user;
         }
       }
     );

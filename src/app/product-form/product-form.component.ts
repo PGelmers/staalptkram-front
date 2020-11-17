@@ -16,6 +16,7 @@ export class ProductFormComponent implements OnInit {
 
   @Input()
   productList: ItemsForSaleListComponent;
+  productIsUploaded = false;
 
   product = new ItemForSale();
   user = new User();
@@ -24,7 +25,8 @@ export class ProductFormComponent implements OnInit {
 
   public save() {
     this.product.user = this.user;
-    this.productService.save(this.product).subscribe();
+    this.productService.save(this.product).subscribe((prd: ItemForSale) => this.product = prd);
+    this.productIsUploaded = true;
   }
 
   ngOnInit(): void {
