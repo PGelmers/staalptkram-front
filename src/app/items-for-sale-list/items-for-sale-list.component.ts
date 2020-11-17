@@ -9,17 +9,19 @@ import {ItemForSaleService} from '../../services/item-for-sale.service';
 })
 export class ItemsForSaleListComponent implements OnInit {
   products: ItemForSale[];
-  filter: string;
-  sortbyvalue: string;
+  filter = 'ALL';
+  sortbyvalue = 'ID';
   filteruserid: number;
 
   constructor(private itemForSaleService: ItemForSaleService) {
   }
 
+  // tslint:disable-next-line:typedef
   ngOnInit() {
     this.reloadAll();
   }
 
+  // tslint:disable-next-line:typedef
   reloadAll() {
     this.itemForSaleService.findAll().subscribe(
       prds => {
@@ -31,23 +33,20 @@ export class ItemsForSaleListComponent implements OnInit {
     );
   }
 
+  // tslint:disable-next-line:typedef
   delete(id) {
     this.itemForSaleService.delete(id).subscribe(
-      () => this.reloadAll()
+      () => this.search(this.filter, this.sortbyvalue)
     );
   }
 
+  // tslint:disable-next-line:typedef
   search(filtercategory: string, sortbyvalue: string) {
     this.itemForSaleService.findAll().subscribe(
       prds => {
-        if (filtercategory === undefined) {
-          filtercategory = 'ALL';
-        }
-        if (sortbyvalue === undefined) {
-          sortbyvalue = 'ID';
-        }
+        // tslint:disable-next-line:max-line-length
         if (filtercategory.toLocaleLowerCase() !== 'all') {
-          prds = prds.filter(x => x.category === filtercategory);
+          prds = prds.filter(x => x.category.toLocaleLowerCase() === filtercategory.toLocaleLowerCase());
         }
         sortbyvalue = sortbyvalue.toLocaleLowerCase();
         this.products = prds
@@ -56,6 +55,7 @@ export class ItemsForSaleListComponent implements OnInit {
               if (eval('n1.' + sortbyvalue) > eval('n2.' + sortbyvalue)) {
                 return 1;
               }
+              // tslint:disable-next-line:no-eval
               if (eval('n1.' + sortbyvalue) < eval('n2.' + sortbyvalue)) {
                 return -1;
               }
@@ -69,6 +69,7 @@ export class ItemsForSaleListComponent implements OnInit {
     );
   }
 
+  // tslint:disable-next-line:typedef
   filter_user(id: number) {
     this.itemForSaleService.findAll().subscribe(
       prds => {
@@ -78,5 +79,10 @@ export class ItemsForSaleListComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  // tslint:disable-next-line:typedef
+  setsortvalue(sortvalue: string) {
+    this.sortbyvalue = sortvalue;
   }
 }
