@@ -10,18 +10,15 @@ declare var ol: any;
   styleUrls: ['./personal.component.css']
 })
 export class PersonalComponent implements OnInit {
-  user: User;
-  // TODO: use global user variable.
-  // latitude = this.user.latitude;
-  // longitude = this.user.longitude;
-  latitude = 53.20589;
-  longitude = 6.57904;
+  user = new User();
+  latitude = this.user.latitude;
+  longitude = this.user.longitude;
+  // latitude = 53.20589;
+  // longitude = 6.57904;
 
   map: any;
 
-  constructor(
-    // private user: User
-  ) {
+  constructor() {
   }
 
   ngOnInit(): void {
@@ -42,7 +39,6 @@ export class PersonalComponent implements OnInit {
     });
     this.addMarker();
   }
-
 
   addMarker(): void {
     const layer = new ol.layer.Vector({
