@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {User} from '../../model/user';
 
 declare var ol: any;
 
@@ -8,12 +9,17 @@ declare var ol: any;
   styleUrls: ['./personal.component.css']
 })
 export class PersonalComponent implements OnInit {
+  // TODO: use global user variable.
+  // latitude = this.user.latitude;
+  // longitude = this.user.longitude;
   latitude = 53.20589;
   longitude = 6.57904;
 
   map: any;
 
-  constructor() {
+  constructor(
+    // private user: User
+  ) {
   }
 
   ngOnInit(): void {
