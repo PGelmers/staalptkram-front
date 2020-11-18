@@ -30,7 +30,11 @@ export class PersonalComponent implements OnInit {
         marker: ol.proj.fromLonLat([this.longitude, this.latitude])
       })
     });
+    this.addMarker();
+  }
 
+
+  addMarker(): void {
     const layer = new ol.layer.Vector({
       source: new ol.source.Vector({
         features: [
@@ -41,6 +45,21 @@ export class PersonalComponent implements OnInit {
       })
     });
     this.map.addLayer(layer);
-  }
 
+    // const container = document.getElementById('popup');
+    // const content = document.getElementById('popup-content');
+    // const closer = document.getElementById('popup-closer');
+    //
+    // const overlay = new ol.Overlay({
+    //   element: container,
+    //   autoPan: true,
+    //   autoPanAnimation: {
+    //     duration: 250
+    //   }
+    // });
+    // this.map.addOverlay(overlay);
+    //
+    // content.innerHTML = '<b>Hello world!</b><br />I am a popup.';
+    // overlay.setPosition(ol.proj.fromLonLat([this.longitude, this.latitude]));
+  }
 }
