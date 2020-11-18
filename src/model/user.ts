@@ -5,8 +5,8 @@ export class User {
   surname: string;
   email: string;
   telephone: string;
-  latitude: string;
-  longitude: string;
+  latitude: number;
+  longitude: number;
   registration: string;
 
   public myString(): string {

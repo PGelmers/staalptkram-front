@@ -11,10 +11,9 @@ declare var ol: any;
 })
 export class PersonalComponent implements OnInit {
   user = new User();
-  latitude = this.user.latitude;
-  longitude = this.user.longitude;
-  // latitude = 53.20589;
-  // longitude = 6.57904;
+  // TODO: dit zijn doubles in de backend.
+  latitude: number;
+  longitude: number;
 
   map: any;
 
@@ -23,6 +22,8 @@ export class PersonalComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = GlobalConstants.user;
+    this.latitude = this.user.latitude;
+    this.longitude = this.user.longitude;
 
     this.map = new ol.Map({
       target: 'map',
