@@ -85,6 +85,10 @@
         <td *ngIf="this.user !== undefined">
           <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
         </td>
+        <td *ngIf="this.user !== undefined">
+          <a input class="btn btn-light" routerLink="/edit-ad/{{product.id}}">EDIT</a>
+<!--          <button input class="btn btn-light" (click)="edit(product.id)">EDIT</button>-->
+        </td>
       </tr>
     </table>
 
