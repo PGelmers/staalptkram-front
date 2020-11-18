@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {GlobalConstants} from '../../common/global-constants';
 import {User} from '../../model/user';
 
 declare var ol: any;
@@ -9,6 +10,7 @@ declare var ol: any;
   styleUrls: ['./personal.component.css']
 })
 export class PersonalComponent implements OnInit {
+  user: User;
   // TODO: use global user variable.
   // latitude = this.user.latitude;
   // longitude = this.user.longitude;
@@ -23,6 +25,8 @@ export class PersonalComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.user = GlobalConstants.user;
+
     this.map = new ol.Map({
       target: 'map',
       layers: [

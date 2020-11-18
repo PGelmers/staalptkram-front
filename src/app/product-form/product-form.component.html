@@ -1,0 +1,21 @@
+<p>Add Product:</p>
+<p>Title: <input type="text" [(ngModel)]="product.title" name="title" placeholder="title"></p>
+<p>Price: <input type="number" [(ngModel)]="product.price" name="price" placeholder="price"></p>
+<p>Description: <input type="text" [(ngModel)]="product.description" name="description" placeholder="description"></p>
+<label for="category">Category: </label>
+<select id="category" name="category" [(ngModel)]="product.category">
+  <option value="FIETSEN">Fietsen</option>
+  <option value="KNIKKERS">Knikkers</option>
+  <option value="POKEMONKAARTEN">Pokemonkaarten</option>
+</select>
+<p>User ID: <input type="number" [(ngModel)]="user.id" name="user_id" placeholder="user id"></p>
+
+
+<button (click)="save()">Upload Product</button>
+
+<div *ngIf="!productIsUploaded">
+  <p>Upload your product. You can then upload one or more images of your product.</p>
+</div>
+<div *ngIf="productIsUploaded">
+  <app-image-upload [productID]="product.id"></app-image-upload>
+</div>
