@@ -11,6 +11,7 @@ declare var ol: any;
 })
 export class PersonalComponent implements OnInit {
   user = new User();
+
   // TODO: aanzetten zodra login component geïntegreerd is.
   // latitude: number;
   // longitude: number;
