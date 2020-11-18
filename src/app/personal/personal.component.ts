@@ -11,8 +11,13 @@ declare var ol: any;
 })
 export class PersonalComponent implements OnInit {
   user = new User();
-  latitude: number;
-  longitude: number;
+  // TODO: aanzetten zodra login component geïntegreerd is.
+  // latitude: number;
+  // longitude: number;
+
+  // TODO: verwijderen zodra login component geïntegreerd is.
+  latitude = 53.20589;
+  longitude = 6.57904;
 
   map: any;
 
@@ -21,8 +26,9 @@ export class PersonalComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = GlobalConstants.user;
-    this.latitude = this.user.latitude;
-    this.longitude = this.user.longitude;
+    // TODO: aanzetten zodra login component geïntegreerd is.
+    // this.latitude = this.user.latitude;
+    // this.longitude = this.user.longitude;
 
     this.map = new ol.Map({
       target: 'map',
