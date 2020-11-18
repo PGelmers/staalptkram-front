@@ -29,10 +29,12 @@
 
     <hr>
 
-    I only want to see the products of user:
-    <input input class="form-control-input" type="number" id="filter_user" name="filter_user" min="1" max="2"
-           [(ngModel)]="filteruserid">
-    <button input class="btn btn-light" (click)="filter_user(filteruserid)">Show products</button>
+    <div *ngIf="this.user === undefined">
+      I only want to see the products of user:
+      <input input class="form-control-input" type="number" id="filter_user" name="filter_user" min="1" max="2"
+             [(ngModel)]="filteruserid">
+      <button input class="btn btn-light" (click)="filter_user(filteruserid)">Show products</button>
+    </div>
 
     <hr>
     <p>Category: {{filter}}</p>
@@ -80,7 +82,7 @@
             </div>
           </div>
         </td>
-        <td>
+        <td *ngIf="this.user !== undefined">
           <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
         </td>
       </tr>

@@ -6,6 +6,7 @@ import {NewUserComponent} from './new-user/new-user.component';
 import {PersonalComponent} from './personal/personal.component';
 import {ItemsForSaleListComponent} from './items-for-sale-list/items-for-sale-list.component';
 import {ItemForSaleComponent} from './item-for-sale/item-for-sale.component';
+import {ProductFormComponent} from './product-form/product-form.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/startscreen', pathMatch: 'full'},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'register', component: NewUserComponent},
   {path: 'personal', component: PersonalComponent},
   {path: 'productlist', component: ItemsForSaleListComponent},
-  {path: 'product/:productid', component: ItemForSaleComponent}
+  {path: 'product/:productid', component: ItemForSaleComponent},
+  {path: 'create-ad', component: ProductFormComponent}
 ];
 
 @NgModule({
