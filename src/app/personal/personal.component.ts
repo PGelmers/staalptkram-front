@@ -11,7 +11,6 @@ declare var ol: any;
 })
 export class PersonalComponent implements OnInit {
   user = new User();
-  // TODO: dit zijn doubles in de backend.
   latitude: number;
   longitude: number;
 
