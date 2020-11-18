@@ -13,8 +13,10 @@ import {HttpClient} from '@angular/common/http';
 export class MessageServiceService {
   public stompClient;
   public msg = [];
+  public chat = [];
 
   constructor(public http: HttpClient) {
+    this.getChat(1);
     this.initializeWebSocketConnection();
   }
 
@@ -60,5 +62,12 @@ export class MessageServiceService {
         }
       }
     );
+  }
+
+  getChat(chatId: number): void {
+    this.http.get('http://localhost:8080/chat/1').subscribe((chat) => {
+      // @ts-ignore
+      this.chat = chat.messages;
+    });
   }
 }

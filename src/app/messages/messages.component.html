@@ -4,6 +4,11 @@
   <div class="iPhone">
     <div id="overlay"></div>
     <div class="messages" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+      <div class="message" *ngFor="let msgHistory of messageService.chat">
+        <div [ngClass]="msgHistory.idSender == 2 ? 'sender' : 'receiver'">
+          {{msgHistory.message}}
+        </div>
+      </div>
       <div class="message" *ngFor="let msg of messageService.msg">
         <div [ngClass]="msg.idSender == 2 ? 'sender' : 'receiver'">
           {{msg.message}}
@@ -22,3 +27,4 @@
     </div>
   </div>
 </div>
+
