@@ -40,7 +40,7 @@ export class PersonalComponent implements OnInit {
       ],
       view: new ol.View({
         center: ol.proj.fromLonLat([this.longitude, this.latitude]),
-        zoom: 17,
+        zoom: 19,
         marker: ol.proj.fromLonLat([this.longitude, this.latitude])
       })
     });
@@ -72,8 +72,8 @@ export class PersonalComponent implements OnInit {
     });
     this.map.addOverlay(overlay);
 
-
-    content.innerHTML = '<b>Hello world!</b><br />I am a popup.';
+    // TODO: checken of dit werkt na integratie login component.
+    content.innerHTML = '<b>' + this.user.straatnaam + '</br>' + this.user.huisnummer + '<br>' + this.user.plaatsnaam + '</b>';
     overlay.setPosition(ol.proj.fromLonLat([this.longitude, this.latitude]));
   }
 }
