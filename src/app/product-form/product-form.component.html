@@ -17,7 +17,7 @@
 </div>
 <div *ngIf="productIsUploaded">
 
-  <app-image-upload [productId]="product.id"></app-image-upload>
+  <app-image-upload [productId]="this.product.id"></app-image-upload>
   <div class="container row">
     <div class="col-lg-3 image-container-self" *ngFor="let image of this.product.images">
       <div>

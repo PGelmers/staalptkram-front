@@ -11,14 +11,10 @@ import {Router} from '@angular/router';
 export class ImageUploadComponent implements OnInit {
 
   selectedFile: File;
-  message: string;
   imageName: any;
-
-
   // tslint:disable-next-line:no-input-rename
-  @Input('productID')
+  @Input('productId')
   productId: number;
-
   product = new ItemForSale();
 
   constructor(public imageService: ImageService, public router: Router) {
@@ -32,6 +28,7 @@ export class ImageUploadComponent implements OnInit {
 
   // Gets called when the user clicks on submit to upload the image (through the ImageService)
   onUpload(): void {
+    console.log(this.productId);
     this.imageService.save(this.selectedFile, this.productId).subscribe((returnProductID: number) => {
         console.log(returnProductID);
         this.router.navigateByUrl('/fake/' + this.productId);
