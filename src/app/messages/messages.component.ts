@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {MessageService} from '../../services/message.service';
+import {MessageServiceService} from '../../services/message-service.service';
 
 @Component({
   selector: 'app-messages',
@@ -7,11 +7,24 @@ import {MessageService} from '../../services/message.service';
   styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent implements OnInit {
+  title = 'staalptkram-front';
+  input;
 
-  constructor(public messageService: MessageService) {
+  constructor(public messageService: MessageServiceService) {
   }
 
   ngOnInit(): void {
+  }
+
+  sendMessage(): void {
+    if (this.input) {
+      this.messageService.sendMessage(this.input);
+      this.input = '';
+    }
+  }
+
+  newChat(): void {
+    this.messageService.newChat();
   }
 
 }

@@ -10,5 +10,7 @@ import {User} from '../model/user';
 export class AppComponent{
   title = 'staalptkram-front';
   user = GlobalConstants.user;
-}
 
+  constructor() {
+  }
+}
