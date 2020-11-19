@@ -25,14 +25,8 @@ export class ItemForSaleComponent implements OnInit {
   }
 
   getSingleItemForSale(id: number): void {
-    this.itemForSaleService.getItemForSale(id).subscribe(itemForSale => this.itemForSale = itemForSale);
-
-    // TODO: onderstaande is de code uit de Tour of Heroes app. Krijgt id dynamisch binnen. Hoe werk dit?
-    // const id = +this.route.snapshot.paramMap.get('id');
-    // this.itemForSaleService.getItemForSale(id).subscribe(
-    //   itemForSale => this.itemForSale = itemForSale
-    // );
-
+    this.itemForSaleService.getItemForSale(id).subscribe(
+      itemForSale => this.itemForSale = itemForSale);
   }
 
   goBack(): void {
