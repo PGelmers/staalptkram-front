@@ -26,7 +26,12 @@ export class PersonalComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.initializeMap();
+  }
+
+  initializeMap(): void {
     this.user = GlobalConstants.user;
+
     // TODO: aanzetten zodra login component geïntegreerd is.
     // this.latitude = this.user.latitude;
     // this.longitude = this.user.longitude;
