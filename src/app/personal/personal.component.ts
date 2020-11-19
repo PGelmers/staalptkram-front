@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {GlobalConstants} from '../../common/global-constants';
+import {User} from '../../model/user';
 
 declare var ol: any;
 
@@ -8,6 +10,13 @@ declare var ol: any;
   styleUrls: ['./personal.component.css']
 })
 export class PersonalComponent implements OnInit {
+  user = new User();
+
+  // TODO: aanzetten zodra login component geïntegreerd is.
+  // latitude: number;
+  // longitude: number;
+
+  // TODO: verwijderen zodra login component geïntegreerd is.
   latitude = 53.20589;
   longitude = 6.57904;
 
@@ -17,6 +26,11 @@ export class PersonalComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.user = GlobalConstants.user;
+    // TODO: aanzetten zodra login component geïntegreerd is.
+    // this.latitude = this.user.latitude;
+    // this.longitude = this.user.longitude;
+
     this.map = new ol.Map({
       target: 'map',
       layers: [
@@ -32,7 +46,6 @@ export class PersonalComponent implements OnInit {
     });
     this.addMarker();
   }
-
 
   addMarker(): void {
     const layer = new ol.layer.Vector({
