@@ -17,6 +17,7 @@ import {ItemForSaleComponent} from './item-for-sale/item-for-sale.component';
 import { PictureUploadRetrieveComponent } from './picture-upload-retrieve/picture-upload-retrieve.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import {ProductFormComponent} from './product-form/product-form.component';
+import { FakeComponent } from './fake/fake.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {ProductFormComponent} from './product-form/product-form.component';
     PictureUploadRetrieveComponent,
     ImageUploadComponent,
     ProductFormComponent,
+    FakeComponent,
   ],
   imports: [
     AppRoutingModule,

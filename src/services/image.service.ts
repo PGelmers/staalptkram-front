@@ -17,10 +17,7 @@ export class ImageService {
     uploadImageData.append('productID', '' + productID);
 
     // Make a call to the Spring Boot Application to save the image
-    return this.httpClient.post('http://localhost:8080/image/upload', uploadImageData, {observe: 'response'});
+    return this.httpClient.post('http://localhost:8080/image/upload', uploadImageData);
   }
-
-
-
 
 }
