@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ItemForSale} from '../../model/item-for-sale';
 import {ItemForSaleService} from '../../services/item-for-sale.service';
+import {User} from '../../model/user';
 
 @Component({
   selector: 'app-items-for-sale-list',
@@ -12,6 +13,8 @@ export class ItemsForSaleListComponent implements OnInit {
   filter = 'ALL';
   sortbyvalue = 'ID';
   filteruserid: number;
+  @Input()
+  user: User;
 
   constructor(private itemForSaleService: ItemForSaleService) {
   }
@@ -23,14 +26,15 @@ export class ItemsForSaleListComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   reloadAll() {
-    this.itemForSaleService.findAll().subscribe(
-      prds => {
-        this.products = prds;
-      },
-      err => {
-        console.log(err);
-      }
-    );
+    if (this.user === undefined) {
+      this.itemForSaleService.findAll().subscribe(
+        prds => {
+          this.products = prds;
+        }
+      );
+    } else {
+      this.filter_user(this.user.id);
+    }
   }
 
   // tslint:disable-next-line:typedef
@@ -42,14 +46,21 @@ export class ItemsForSaleListComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   search(filtercategory: string, sortbyvalue: string) {
+    console.log(filtercategory);
     this.itemForSaleService.findAll().subscribe(
       prds => {
+        this.products = prds;
+        if (this.user !== undefined) {
+          this.products = this.products.filter(x => x.user.id === this.user.id);
+          console.log('We zijn in de user-branch van de functie');
+        }
         // tslint:disable-next-line:max-line-length
         if (filtercategory.toLocaleLowerCase() !== 'all') {
-          prds = prds.filter(x => x.category.toLocaleLowerCase() === filtercategory.toLocaleLowerCase());
+          this.products = this.products.filter(x => x.category.toLocaleLowerCase() === filtercategory.toLocaleLowerCase());
+          console.log('We zijn in de NOT-all-branch van de functie');
         }
         sortbyvalue = sortbyvalue.toLocaleLowerCase();
-        this.products = prds
+        this.products = this.products
           .sort((n1, n2) => {
               // tslint:disable-next-line:no-eval
               if (eval('n1.' + sortbyvalue) > eval('n2.' + sortbyvalue)) {
@@ -62,11 +73,8 @@ export class ItemsForSaleListComponent implements OnInit {
               return 0;
             }
           );
-      },
-      err => {
-        console.log(err);
-      }
-    );
+
+      });
   }
 
   // tslint:disable-next-line:typedef

@@ -1,4 +1,14 @@
-<!--<app-items-for-sale-list></app-items-for-sale-list>-->
+
+<div *ngIf="user !== undefined">
+  <a routerLink="/create-ad" class="btn btn-primary"> Create a new ad! </a>
+</div>
+
+<div class="for-testing" *ngIf="user">
+  <p> User bestaat!</p>
+  <p> id = {{user.id}}</p>
+</div>
+
+<app-items-for-sale-list [user]="user"></app-items-for-sale-list>
 
 <div id="map" class="map" style="width:1000px"></div>
 <div id="popup" class="ol-popup">
