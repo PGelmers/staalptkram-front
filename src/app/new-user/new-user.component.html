@@ -1,31 +1,44 @@
+<div class="container whole-screen">
 
-<div id="container-register" class="container">
-  <h1> Register new user</h1>
-  <form>
-    <div class="form-group">
-      <label for="nameInput">Full name</label>
-      <input class="form-control" type="text" placeholder="First name" id="nameInput" [(ngModel)]="newUser.firstName" name="firstName">
-      <input class="form-control" type="text" placeholder="Last name" [(ngModel)]="newUser.surname" name="surname">
+<!--  <app-navbar></app-navbar>-->
+
+  <div class="row row-100 align-items-center">
+    <div class="col-4 mx-auto"><h1> Register new user</h1>
+      <form>
+        <div class="form-group">
+          <label for="nameInput">Full name</label>
+          <input class="form-control" type="text" placeholder="First name" id="nameInput"
+                 [(ngModel)]="newUser.firstName"
+                 name="firstName">
+          <input class="form-control" type="text" placeholder="Last name" [(ngModel)]="newUser.surname" name="surname">
+        </div>
+        <div class="form-group">
+          <label for="contactInput">Contact information</label>
+          <input class="form-control" type="email" placeholder="Email" id="contactInput" [(ngModel)]="newUser.email"
+                 name="email">
+          <input class="form-control" type="text" placeholder="Phone-number" [(ngModel)]="newUser.telephone"
+                 name="telephone">
+        </div>
+        <div class="form-group">
+          <label for="loginInput">Username & password</label>
+          <input class="form-control" type="text" placeholder="Username" id="loginInput"
+                 [(ngModel)]="newAccount.username"
+                 name="username">
+          <input class="form-control" type="password" placeholder="Password" [(ngModel)]="newAccount.password"
+                 name="password">
+        </div>
+        <div class="form-group d-flex justify-content-center">
+          <a type="button" routerLink="/startscreen" class="btn btn-primary"><- homepage</a>
+          <button type="button" (click)="saveNewUser()" class="btn btn-primary">Register as new user</button>
+
+        </div>
+        <div class="form-group">
+          <pre id="testString"> {{testString}} {{newUser | json}}</pre>
+        </div>
+      </form>
     </div>
-    <div class="form-group">
-      <label for="contactInput">Contact information</label>
-      <input class="form-control" type="email" placeholder="Email" id="contactInput" [(ngModel)]="newUser.email" name="email">
-      <input class="form-control" type="text" placeholder="Phone-number" [(ngModel)]="newUser.telephone" name="telephone">
-    </div>
-    <div class="form-group">
-      <label for="loginInput">Username & password</label>
-      <input class="form-control" type="text" placeholder="Username" id="loginInput" [(ngModel)]="newAccount.username" name="username">
-      <input class="form-control" type="password" placeholder="Password" [(ngModel)]="newAccount.password" name="password">
-    </div>
-    <div class="form-group d-flex justify-content-center">
-      <button type="button" (click)="saveNewUser()" class="btn btn-primary">Register as new user</button>
-    </div>
-    <div class="form-group">
-      <pre id="testString"> {{testString}} {{newUser | json}}</pre>
-    </div>
-  </form>
+  </div>
 </div>
-
 
 
 <!--SOME LAYOUT IN LOCAL CSS FILE-->

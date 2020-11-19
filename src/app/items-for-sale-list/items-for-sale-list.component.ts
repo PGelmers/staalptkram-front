@@ -3,6 +3,8 @@ import {ItemForSale} from '../../model/item-for-sale';
 import {ItemForSaleService} from '../../services/item-for-sale.service';
 import {User} from '../../model/user';
 
+// TODO: Make button that changes a variable to 'only pictures' and show with *ngIf only pictures or the details like it is now
+
 @Component({
   selector: 'app-items-for-sale-list',
   templateUrl: './items-for-sale-list.component.html',
@@ -15,6 +17,9 @@ export class ItemsForSaleListComponent implements OnInit {
   filteruserid: number;
   @Input()
   user: User;
+  @Input()
+  maxItems = 1000;
+  view = 'details';
 
   constructor(private itemForSaleService: ItemForSaleService) {
   }
@@ -29,7 +34,7 @@ export class ItemsForSaleListComponent implements OnInit {
     if (this.user === undefined) {
       this.itemForSaleService.findAll().subscribe(
         prds => {
-          this.products = prds;
+          this.products = prds.slice(0, this.maxItems);
         }
       );
     } else {
@@ -93,4 +98,5 @@ export class ItemsForSaleListComponent implements OnInit {
   setsortvalue(sortvalue: string) {
     this.sortbyvalue = sortvalue;
   }
+
 }

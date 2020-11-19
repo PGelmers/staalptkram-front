@@ -1,5 +1,9 @@
-#container-register{
-  max-width: 400px;
+.whole-screen{
+  height: 100vh;
+}
+
+.row-100{
+  height: 100%;
 }
 
 #container-register label{

@@ -1,7 +1,11 @@
-#container-login{
-  max-width: 400px;
+.whole-screen{
+  height: 100vh;
 }
 
 #testString{
   width:100%;
+}
+
+.row-100{
+  height:100%;
 }

@@ -3,6 +3,7 @@ import {Login} from '../../model/login';
 import {User} from '../../model/user';
 import {LoginService} from '../../services/login.service';
 import { GlobalConstants } from '../../common/global-constants';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   user = new User();
   testString2 = 'The purpose of this string is for testing';
 
-  constructor(public loginService: LoginService) {
+  constructor(public loginService: LoginService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
         } else {
           this.testString2 = 'Success! \n\nUser with id ' + returnedUser.id + ' has logged in. \n\n';
           GlobalConstants.user = this.user;
+          this.router.navigateByUrl('/personal');
         }
       }
     );

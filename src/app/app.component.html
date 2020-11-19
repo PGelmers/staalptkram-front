@@ -1,51 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" routerLink="/startscreen">Staalptkram</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-link" routerLink="/startscreen">Startscreen<span class="sr-only">(current)</span></a>
-      <a class="nav-link" routerLink="/login">Login</a>
-      <a class="nav-link" routerLink="/register">Register</a>
-      <a class="nav-link" routerLink="/personal">My Ads</a>
-    </div>
-  </div>
-</nav>
+<!--<p>Hieronder in de HTML zit een router-outlet die doorstuurt naar de verschillende pagina's</p>-->
+
+<router-outlet></router-outlet>
 
 <script>
   var global = window; // fix global is undefined in socketjs-client
 </script>
-
-<p> Navbar for testing purposes </p>
-
-<nav>
-  <a routerLink="/startscreen">Startscreen</a>
-  <a routerLink="/personal">Personal</a>
-  <a routerLink="/login">Login</a>
-  <a routerLink="/register">Register</a>
-</nav>
-
-<!--<p>Hieronder in de HTML zit een router-outlet die doorstuurt naar de verschillende pagina's</p>-->
-
-<app-product-form></app-product-form>
-
-<a class="nav-link" routerLink="/productlist">productlist</a>
-
-<router-outlet></router-outlet>
-
-<app-personal></app-personal>
-
-<router-outlet></router-outlet>
-
-<app-image-upload></app-image-upload>
-
-<app-picture-upload-retrieve></app-picture-upload-retrieve>
-
-<app-item-for-sale></app-item-for-sale>
-
-<app-messages></app-messages>
-
-<app-items-for-sale-list></app-items-for-sale-list>
 

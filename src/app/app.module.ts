@@ -18,7 +18,8 @@ import {ItemForSaleComponent} from './item-for-sale/item-for-sale.component';
 import {PictureUploadRetrieveComponent} from './picture-upload-retrieve/picture-upload-retrieve.component';
 import {ImageUploadComponent} from './image-upload/image-upload.component';
 import {ProductFormComponent} from './product-form/product-form.component';
-import {FakeComponent} from './fake/fake.component';
+import { FakeComponent } from './fake/fake.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import {FakeComponent} from './fake/fake.component';
     ImageUploadComponent,
     ProductFormComponent,
     FakeComponent,
+    NavbarComponent,
   ],
   imports: [
     AppRoutingModule,
