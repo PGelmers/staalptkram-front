@@ -5,6 +5,11 @@ export class User {
   surname: string;
   email: string;
   telephone: string;
+  latitude: number;
+  longitude: number;
+  straatnaam: string;
+  huisnummer: string;
+  plaatsnaam: string;
   registration: string;
 
   public myString(): string {
@@ -13,6 +18,11 @@ export class User {
       ',\tsurname=' + this.surname + '\n' +
       ',\temail=' + this.email + '\n' +
       ',\ttelephone=' + this.telephone + '\n' +
+      ',\tlatitude=' + this.latitude + '\n' +
+      ',\tlongitude=' + this.longitude + '\n' +
+      ',\tstraatnaam=' + this.straatnaam + '\n' +
+      ',\thuisnummer=' + this.huisnummer + '\n' +
+      ',\tplaatsnaam=' + this.plaatsnaam + '\n' +
       ',\tregistration=' + this.registration + '\n' +
       '}';
   }
