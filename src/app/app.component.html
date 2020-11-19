@@ -1,4 +1,19 @@
-<app-login></app-login>
+<script>
+  var global = window; // fix global is undefined in socketjs-client
+</script>
 
-<app-new-user></app-new-user>
+<p> Navbar for testing purposes </p>
+
+<nav>
+  <a routerLink="/startscreen">Startscreen</a>
+  <a routerLink="/personal">Personal</a>
+  <a routerLink="/login">Login</a>
+  <a routerLink="/register">Register</a>
+</nav>
+
+<p>Hieronder in de HTML zit een router-outlet die doorstuurt naar de verschillende pagina's</p>
+
+<router-outlet></router-outlet>
+
+<app-messages></app-messages>
 
