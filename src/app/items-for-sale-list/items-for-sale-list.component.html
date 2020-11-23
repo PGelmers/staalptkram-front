@@ -2,11 +2,13 @@
   <div class="row">
     <div class="col-12">
       <div class="row">
-        <div class="offset-8 col-2">
-          <button mat-raised-button color="primary" (click)="this.view = 'pictures';">Change view to images!</button>
-        </div>
-        <div class="col-2">
-          <button mat-raised-button color="primary" (click)="this.view = 'details';">Change view to details!</button>
+        <div class="offset-10 col-2">
+          <button mat-raised-button color="primary" *ngIf="this.view ==='details'" (click)="this.view = 'pictures';">
+            Change view to images!
+          </button>
+          <button mat-raised-button color="primary" *ngIf="this.view ==='pictures'" (click)="this.view = 'details';">
+            Change view to details!
+          </button>
         </div>
       </div>
     </div>
