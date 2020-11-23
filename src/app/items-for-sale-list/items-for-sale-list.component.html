@@ -1,103 +1,57 @@
 <div class="container">
-
-  <h1>Items For Sale:</h1>
-
-  <div class="form-group">
-    <div class="row">
-      <div class="col-3">
-        <p>Filter Category:</p>
-        <input class="form-check-input" type="radio" id="ALL" name="filter" value="ALL" [(ngModel)]="filter">
-        <label class="form-check-label" for="ALL">All Categories</label><br>
-        <input class="form-check-input" type="radio" id="KNIKKERS" name="filter" value="KNIKKERS" [(ngModel)]="filter">
-        <label class="form-check-label" for="KNIKKERS">Knikkers</label><br>
-        <input class="form-check-input" type="radio" id="POKEMONKAARTEN" name="filter" value="POKEMONKAARTEN"
-               [(ngModel)]="filter">
-        <label class="form-check-label" for="POKEMONKAARTEN">Pokemonkaarten</label><br>
-        <input class="form-check-input" type="radio" id="FIETSEN" name="filter" value="FIETSEN" [(ngModel)]="filter">
-        <label class="form-check-label" for="FIETSEN">Fietsen</label><br>
-      </div>
-      <div class="col-3">
-        <button input class="btn btn-light" (click)="search(filter, sortbyvalue)">Filter</button>
-      </div>
+  <div class="row">
+    <div class="col-8 offset-2 text-align-center">
+      <button input class="btn btn-light" (click)="this.view = 'pictures';">Change view to images!</button>
+      <button input class="btn btn-light" (click)="this.view = 'details';">Change view to details!</button>
     </div>
-
-    <button input class="btn btn-light" (click)="this.view = 'pictures';">Change view to images!</button>
-    <button input class="btn btn-light" (click)="this.view = 'details';">Change view to details!</button>
-
-    <!--    FOR TESTING PURPOSES-->
-
-    <!--    <br><br>-->
-    <!--    Apply all filters:-->
-    <!--    <button input class="btn btn-light" (click)="search(filter, sortbyvalue)">Search</button>-->
-
-    <hr>
-
-    <div *ngIf="this.user === undefined">
-      I only want to see the products of user:
-      <input input class="form-control-input" type="number" id="filter_user" name="filter_user" min="1" max="2"
-             [(ngModel)]="filteruserid">
-      <button input class="btn btn-light" (click)="filter_user(filteruserid)">Show products</button>
-    </div>
-
-    <hr>
-    <p>Category: {{filter}}</p>
-    <p>Sorted by: {{sortbyvalue}}</p>
-
-    <table>
-      <tr>
-        <td>
-          <button input class="btn btn-light" (click)="setsortvalue('id'); search(filter, sortbyvalue)">&darr;ID
-          </button>
-        </td>
-        <td>
-          <button input class="btn btn-light" (click)="setsortvalue('title'); search(filter, sortbyvalue)">&darr;Title
-          </button>
-        </td>
-        <td>
-          <button input class="btn btn-light" (click)="setsortvalue('description'); search(filter, sortbyvalue)">&darr;Description</button>
-        </td>
-        <td>
-          <button input class="btn btn-light" (click)="setsortvalue('price'); search(filter, sortbyvalue)">&darr;Price
-          </button>
-        </td>
-        <td>
-          <button input class="btn btn-light" (click)="setsortvalue('category'); search(filter, sortbyvalue)">&darr;Category</button>
-        </td>
-        <td>
-          <button input class="btn btn-light" (click)="setsortvalue('user'); search(filter, sortbyvalue)">&darr;User
-          </button>
-        </td>
-        <td>First picture</td>
-      </tr>
-      <tr *ngFor="let product of products">
-
-        <td><a routerLink="/product/{{product.id}}">{{product.id}}</a></td>
-        <td>{{product.title}}</td>
-        <td>{{product.description}}</td>
-        <td>${{product.price}}</td>
-        <td>{{product.category}}</td>
-        <td>{{product.user.id}}</td>
-        <td>
-          <!--      ALLEEN DE EERSTE FOTO IN TABEL-->
-          <div class="image-container-self" *ngIf="this.product.images[0]">
-            <div>
-              <img [src]="'data:' + this.product.images[0].type + ';base64,' + this.product.images[0].picByte">
-            </div>
-          </div>
-        </td>
-        <td *ngIf="this.user !== undefined">
-          <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
-        </td>
-        <td *ngIf="this.user !== undefined">
-          <a input class="btn btn-light" routerLink="/edit-ad/{{product.id}}">EDIT</a>
-<!--          <button input class="btn btn-light" (click)="edit(product.id)">EDIT</button>-->
-        </td>
-      </tr>
-    </table>
-
-
   </div>
+
+
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <table>
+    <tr *ngFor="let product of products">
+
+      <td><a routerLink="/product/{{product.id}}">{{product.id}}</a></td>
+      <td>{{product.title}}</td>
+      <td>{{product.description}}</td>
+      <td>${{product.price}}</td>
+      <td>{{product.category}}</td>
+      <td>{{product.user.id}}</td>
+      <td>
+        <div class="image-container-self" *ngIf="this.product.images[0]">
+          <div>
+            <img [src]="'data:' + this.product.images[0].type + ';base64,' + this.product.images[0].picByte">
+          </div>
+        </div>
+      </td>
+      <td *ngIf="this.user !== undefined">
+        <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
+      </td>
+      <td *ngIf="this.user !== undefined">
+        <a input class="btn btn-light" routerLink="/edit-ad/{{product.id}}">EDIT</a>
+        <!--          <button input class="btn btn-light" (click)="edit(product.id)">EDIT</button>-->
+      </td>
+    </tr>
+  </table>
 </div>
-<!--CSS IN LOCAL CSS FILE!-->
 
 
