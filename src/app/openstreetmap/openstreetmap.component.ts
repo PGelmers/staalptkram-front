@@ -65,21 +65,5 @@ export class OpenstreetmapComponent implements OnInit {
       })
     });
     this.map.addLayer(layer);
-
-    const container = document.getElementById('popup');
-    const content = document.getElementById('popup-content');
-
-    const overlay = new ol.Overlay({
-      element: container,
-      autoPan: true,
-      autoPanAnimation: {
-        duration: 250
-      }
-    });
-    this.map.addOverlay(overlay);
-
-    // TODO: checken of dit werkt na integratie login component.
-    content.innerHTML = '<b>' + this.user.straatnaam + '</br>' + this.user.huisnummer + '<br>' + this.user.plaatsnaam + '</b>';
-    overlay.setPosition(ol.proj.fromLonLat([this.longitude, this.latitude]));
   }
 }
