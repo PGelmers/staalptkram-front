@@ -15,12 +15,18 @@
       <p class="label-category">Full Name</p>
       <mat-form-field appearance="outline">
         <mat-label>First Name</mat-label>
-        <input type="text" matInput placeholder="First Name" [(ngModel)]="newUser.firstName">
+        <input type="text" matInput [formControl]="personalInfoFormControl" placeholder="First Name"
+               [(ngModel)]="newUser.firstName">
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Last Name</mat-label>
-        <input type="text" matInput placeholder="Last Name" [(ngModel)]="newUser.surname">
+        <input type="text" matInput [formControl]="personalInfoFormControl" placeholder="Last Name"
+               [(ngModel)]="newUser.surname">
+        <mat-error *ngIf="personalInfoFormControl.hasError('required')">
+          First- and Last name are <strong>required</strong>
+        </mat-error>
       </mat-form-field>
+
 
       <p class="label-category">Contact Information</p>
       <mat-form-field appearance="outline">
@@ -47,7 +53,8 @@
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Enter your password</mat-label>
-        <input matInput [formControl]="accountInfoFormControl" [type]="hide ? 'password' : 'text'" [(ngModel)]="newAccount.password">
+        <input matInput [formControl]="accountInfoFormControl" [type]="hide ? 'password' : 'text'"
+               [(ngModel)]="newAccount.password">
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                 [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>

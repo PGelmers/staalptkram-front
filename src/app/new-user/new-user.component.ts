@@ -26,6 +26,10 @@ export class NewUserComponent implements OnInit {
     Validators.required
   ]);
 
+  personalInfoFormControl = new FormControl('', [
+    Validators.required
+  ]);
+
   constructor(public loginService: LoginService) {
   }
 
