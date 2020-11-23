@@ -34,7 +34,12 @@ export class ItemsForSaleListComponent implements OnInit {
     if (this.user === undefined) {
       this.itemForSaleService.findAll().subscribe(
         prds => {
-          this.products = prds.slice(0, this.maxItems);
+          let sliceStartIndex = 0;
+          const sliceEndIndex = prds.length + 1;
+          if (prds.length > this.maxItems) {
+            sliceStartIndex = prds.length - this.maxItems;
+          }
+          this.products = prds.slice(sliceStartIndex, sliceEndIndex);
         }
       );
     } else {

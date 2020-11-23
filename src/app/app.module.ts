@@ -20,6 +20,7 @@ import {ImageUploadComponent} from './image-upload/image-upload.component';
 import {ProductFormComponent} from './product-form/product-form.component';
 import { FakeComponent } from './fake/fake.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import {MatOptionModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -37,14 +38,15 @@ import { NavbarComponent } from './navbar/navbar.component';
     FakeComponent,
     NavbarComponent,
   ],
-  imports: [
-    AppRoutingModule,
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    AngularMaterialModule
-  ],
+    imports: [
+        AppRoutingModule,
+        BrowserModule,
+        FormsModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        AngularMaterialModule,
+        MatOptionModule
+    ],
   providers: [
     MessageServiceService,
   ],
