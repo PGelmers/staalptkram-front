@@ -12,8 +12,8 @@ declare var ol: any;
 export class OpenstreetmapComponent implements OnInit {
   user = new User();
 
-  latitude: number;
-  longitude: number;
+  latitude = 0;
+  longitude = 0;
 
   map: any;
 

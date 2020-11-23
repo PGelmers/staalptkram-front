@@ -13,7 +13,7 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   login = new Login();
   user = new User();
-  testString2 = 'The purpose of this string is for testing';
+  message: string;
   hide = true;
 
   constructor(public loginService: LoginService, private router: Router) {
@@ -27,10 +27,11 @@ export class LoginComponent implements OnInit {
       (returnedUser: User) => {
         this.user = returnedUser;
         if (returnedUser.firstName == null) {
-          this.testString2 = 'Failed to login!';
+          this.message = 'Please check your username and/or password and try again.';
         } else {
-          this.testString2 = 'Success! \n\nUser with id ' + returnedUser.id + ' has logged in. \n\n';
+          this.message = 'Success! \n\nWelcome back ' + returnedUser.firstName + '\n\n';
           GlobalConstants.user = this.user;
+          // TODO: Uncomment the line below after testing
           // this.router.navigateByUrl('/personal');
         }
       }

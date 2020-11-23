@@ -1,16 +1,5 @@
 <div class="container whole-screen">
 
-  <!--  <app-navbar></app-navbar>-->
-  <p>
-    {{hide}}
-    {{newUser.firstName}}
-    {{newUser.surname}}
-    {{newUser.email}}
-    {{newUser.telephone}}
-    {{newAccount.username}}
-    {{newAccount.password}}
-  </p>
-
   <div class="row row-100 align-items-center">
 
     <div class="col-4 mx-auto">
@@ -26,46 +15,61 @@
       <p class="label-category">Full Name</p>
       <mat-form-field appearance="outline">
         <mat-label>First Name</mat-label>
-        <input matInput placeholder="First Name" [(ngModel)]="newUser.firstName">
+        <input type="text" matInput [formControl]="personalInfoFormControl" placeholder="First Name"
+               [(ngModel)]="newUser.firstName">
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Last Name</mat-label>
-        <input matInput placeholder="Last Name" [(ngModel)]="newUser.surname">
+        <input type="text" matInput [formControl]="personalInfoFormControl" placeholder="Last Name"
+               [(ngModel)]="newUser.surname">
+        <mat-error *ngIf="personalInfoFormControl.hasError('required')">
+          First- and Last name are <strong>required</strong>
+        </mat-error>
       </mat-form-field>
+
 
       <p class="label-category">Contact Information</p>
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
-        <input matInput placeholder="Email" [(ngModel)]="newUser.email">
+        <input type="email" matInput [formControl]="emailFormControl" placeholder="Email" [(ngModel)]="newUser.email">
         <mat-icon matSuffix>email</mat-icon>
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Phone</mat-label>
-        <input matInput placeholder="Phone" [(ngModel)]="newUser.telephone">
+        <input type="tel" matInput placeholder="Phone" [(ngModel)]="newUser.telephone">
         <mat-icon matSuffix>phone</mat-icon>
       </mat-form-field>
 
       <p class="label-category">Account Information</p>
       <mat-form-field appearance="outline">
         <mat-label>Username</mat-label>
-        <input matInput placeholder="Username" [(ngModel)]="newAccount.username">
+        <input matInput [formControl]="accountInfoFormControl" placeholder="Username" [(ngModel)]="newAccount.username">
       </mat-form-field>
-
       <mat-form-field appearance="outline">
         <mat-label>Enter your password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="newAccount.password">
+        <input matInput [formControl]="accountInfoFormControl" [type]="hide ? 'password' : 'text'"
+               [(ngModel)]="newAccount.password">
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                 [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
+        <mat-error *ngIf="accountInfoFormControl.hasError('required')">
+          Username and password are <strong>required</strong>
+        </mat-error>
       </mat-form-field>
 
       <div class="form-group d-flex justify-content-center">
         <button mat-stroked-button color="primary" type="button" (click)="saveNewUser()">Register</button>
       </div>
 
-      <div class="form-group">
-        <pre id="testString"> {{testString}} {{newUser | json}}</pre>
+      <div>
+        <p id="message"> {{message}} </p>
       </div>
 
     </div>
