@@ -3,7 +3,12 @@
 
     <div class="col-4 mx-auto">
 
-      <button mat-stroked-button color="primary" type="button" routerLink="/startscreen" class="homepage_btn">Homepage</button>
+      <div class="form-group d-flex justify-content-between homepage_btn">
+        <button mat-stroked-button color="primary" type="button" routerLink="/startscreen">Homepage
+        </button>
+        <button mat-stroked-button color="primary" type="button" routerLink="/register">Register</button>
+      </div>
+
       <h1> Log-in existing user</h1>
 
       <mat-form-field appearance="outline">
@@ -24,9 +29,10 @@
       <div class="form-group d-flex justify-content-center">
         <button mat-stroked-button color="primary" type="button" (click)="tryLogin()">Log in</button>
       </div>
-<!--      <div class="form-group">-->
-<!--        <pre id="testString"> {{testString2}} {{user | json}}</pre>-->
-<!--      </div>-->
+
+      <div class="form-group">
+        <pre id="testString"> {{testString2}} {{user | json}}</pre>
+      </div>
 
     </div>
   </div>

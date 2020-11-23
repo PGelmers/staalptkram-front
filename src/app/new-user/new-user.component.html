@@ -1,41 +1,73 @@
 <div class="container whole-screen">
 
-<!--  <app-navbar></app-navbar>-->
+  <!--  <app-navbar></app-navbar>-->
+  <p>
+    {{hide}}
+    {{newUser.firstName}}
+    {{newUser.surname}}
+    {{newUser.email}}
+    {{newUser.telephone}}
+    {{newAccount.username}}
+    {{newAccount.password}}
+  </p>
 
   <div class="row row-100 align-items-center">
-    <div class="col-4 mx-auto"><h1> Register new user</h1>
-      <form>
-        <div class="form-group">
-          <label for="nameInput">Full name</label>
-          <input class="form-control" type="text" placeholder="First name" id="nameInput"
-                 [(ngModel)]="newUser.firstName"
-                 name="firstName">
-          <input class="form-control" type="text" placeholder="Last name" [(ngModel)]="newUser.surname" name="surname">
-        </div>
-        <div class="form-group">
-          <label for="contactInput">Contact information</label>
-          <input class="form-control" type="email" placeholder="Email" id="contactInput" [(ngModel)]="newUser.email"
-                 name="email">
-          <input class="form-control" type="text" placeholder="Phone-number" [(ngModel)]="newUser.telephone"
-                 name="telephone">
-        </div>
-        <div class="form-group">
-          <label for="loginInput">Username & password</label>
-          <input class="form-control" type="text" placeholder="Username" id="loginInput"
-                 [(ngModel)]="newAccount.username"
-                 name="username">
-          <input class="form-control" type="password" placeholder="Password" [(ngModel)]="newAccount.password"
-                 name="password">
-        </div>
-        <div class="form-group d-flex justify-content-center">
-          <a type="button" routerLink="/startscreen" class="btn btn-primary"><- homepage</a>
-          <button type="button" (click)="saveNewUser()" class="btn btn-primary">Register as new user</button>
 
-        </div>
-        <div class="form-group">
-          <pre id="testString"> {{testString}} {{newUser | json}}</pre>
-        </div>
-      </form>
+    <div class="col-4 mx-auto">
+
+      <div class="form-group d-flex justify-content-between homepage_btn">
+        <button mat-stroked-button color="primary" type="button" routerLink="/startscreen">Homepage
+        </button>
+        <button mat-stroked-button color="primary" type="button" routerLink="/login">Log in</button>
+      </div>
+
+      <h1> Register new user</h1>
+
+      <p class="label-category">Full Name</p>
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="First Name" [(ngModel)]="newUser.firstName">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Last Name" [(ngModel)]="newUser.surname">
+      </mat-form-field>
+
+      <p class="label-category">Contact Information</p>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" [(ngModel)]="newUser.email">
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input matInput placeholder="Phone" [(ngModel)]="newUser.telephone">
+        <mat-icon matSuffix>phone</mat-icon>
+      </mat-form-field>
+
+      <p class="label-category">Account Information</p>
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username" [(ngModel)]="newAccount.username">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="newAccount.password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div class="form-group d-flex justify-content-center">
+        <button mat-stroked-button color="primary" type="button" (click)="saveNewUser()">Register</button>
+      </div>
+
+      <div class="form-group">
+        <pre id="testString"> {{testString}} {{newUser | json}}</pre>
+      </div>
+
     </div>
   </div>
 </div>
