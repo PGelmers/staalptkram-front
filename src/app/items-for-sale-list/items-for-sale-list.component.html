@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="row buttons">
     <div class="col-12">
       <div class="row">
         <div class="offset-9 col-1">
@@ -54,6 +54,8 @@
               </mat-card-header>
               <img mat-card-image *ngIf="this.product.images[0]"
                    [src]="'data:' + this.product.images[0].type + ';base64,' + this.product.images[0].picByte">
+              <img mat-card-image *ngIf="!this.product.images[0]"
+                   src="../../assets/default-img.gif">
               <mat-card-content>
                 {{product.description}}<br><br>
                 Prijs: €{{product.price}}<br>
@@ -78,6 +80,8 @@
               </mat-card-header>
               <img mat-card-image *ngIf="this.product.images[0]"
                    [src]="'data:' + this.product.images[0].type + ';base64,' + this.product.images[0].picByte">
+              <img mat-card-image *ngIf="!this.product.images[0]"
+                   src="../../assets/default-img.gif">
               <mat-card-actions *ngIf="this.user !== undefined">
                 <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
                 <a input class="btn btn-light" routerLink="/edit-ad/{{product.id}}">EDIT</a>
