@@ -52,7 +52,7 @@
                 <mat-card-title>{{product.title}}</mat-card-title>
                 <mat-card-subtitle>{{product.category}}</mat-card-subtitle>
               </mat-card-header>
-              <img *ngIf="this.product.images[0]"
+              <img mat-card-image *ngIf="this.product.images[0]"
                    [src]="'data:' + this.product.images[0].type + ';base64,' + this.product.images[0].picByte">
               <mat-card-content>
                 {{product.description}}<br><br>
@@ -76,7 +76,7 @@
               <mat-card-header>
                 <mat-card-title>{{product.title}}</mat-card-title>
               </mat-card-header>
-              <img *ngIf="this.product.images[0]"
+              <img mat-card-image *ngIf="this.product.images[0]"
                    [src]="'data:' + this.product.images[0].type + ';base64,' + this.product.images[0].picByte">
               <mat-card-actions *ngIf="this.user !== undefined">
                 <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
