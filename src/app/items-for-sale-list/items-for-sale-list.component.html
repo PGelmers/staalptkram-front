@@ -5,45 +5,72 @@
       <button input class="btn btn-light" (click)="this.view = 'details';">Change view to details!</button>
     </div>
   </div>
-
-  <div class="row products" *ngIf="this.view === 'details'">
-    <div class="product col-3" *ngFor="let product of products">
-      <a routerLink="/product/{{product.id}}">
-        <mat-card class="product-card">
-          <mat-card-header>
-            <mat-card-title>{{product.title}}</mat-card-title>
-            <mat-card-subtitle>{{product.category}}</mat-card-subtitle>
-          </mat-card-header>
-          <img *ngIf="this.product.images[0]"
-               [src]="'data:' + this.product.images[0].type + ';base64,' + this.product.images[0].picByte">
-          <mat-card-content>
-            {{product.description}}<br><br>
-            Prijs: €{{product.price}}<br>
-            Verkoper: {{product.user.id}}<br>
-          </mat-card-content>
-          <mat-card-actions *ngIf="this.user !== undefined">
-            <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
-            <a input class="btn btn-light" routerLink="/edit-ad/{{product.id}}">EDIT</a>
-          </mat-card-actions>
-        </mat-card>
-      </a>
+  <div class="row">
+    <div class="col-2 left-widget">
+      <div class="row">
+        <div class="col-12 menu">
+          <h2>Groepen</h2>
+          <ul>
+            <li>
+              <a [routerLink]="" (click)="this.filter = 'ALL'; search(this.filter, this.sortbyvalue)">Alles</a>
+            </li>
+            <li>
+              <a [routerLink]="" (click)="this.filter = 'KNIKKERS'; search(this.filter, this.sortbyvalue)">Knikkers</a>
+            </li>
+            <li>
+              <a [routerLink]=""
+                 (click)="this.filter = 'POKEMONKAARTEN'; search(this.filter, this.sortbyvalue)">Pokemonkaarten</a>
+            </li>
+            <li>
+              <a [routerLink]="" (click)="this.filter = 'FIETSEN'; search(this.filter, this.sortbyvalue)">Fietsen</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="row products" *ngIf="this.view === 'pictures'">
-    <div class="product col-3" *ngFor="let product of products">
-      <a routerLink="/product/{{product.id}}">
-        <mat-card class="product-card">
-          <mat-card-header>
-            <mat-card-title>{{product.title}}</mat-card-title>
-          </mat-card-header>
-          <img *ngIf="this.product.images[0]"
-               [src]="'data:' + this.product.images[0].type + ';base64,' + this.product.images[0].picByte">
-          <mat-card-actions *ngIf="this.user !== undefined">
-            <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
-            <a input class="btn btn-light" routerLink="/edit-ad/{{product.id}}">EDIT</a>
-          </mat-card-actions>
-        </mat-card>
-      </a>
+    <div class="col-10 products" *ngIf="this.view === 'details'">
+      <div class="row">
+        <div class="product col-3" *ngFor="let product of products">
+          <a routerLink="/product/{{product.id}}">
+            <mat-card class="product-card">
+              <mat-card-header>
+                <mat-card-title>{{product.title}}</mat-card-title>
+                <mat-card-subtitle>{{product.category}}</mat-card-subtitle>
+              </mat-card-header>
+              <img *ngIf="this.product.images[0]"
+                   [src]="'data:' + this.product.images[0].type + ';base64,' + this.product.images[0].picByte">
+              <mat-card-content>
+                {{product.description}}<br><br>
+                Prijs: €{{product.price}}<br>
+                Verkoper: {{product.user.id}}<br>
+              </mat-card-content>
+              <mat-card-actions *ngIf="this.user !== undefined">
+                <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
+                <a input class="btn btn-light" routerLink="/edit-ad/{{product.id}}">EDIT</a>
+              </mat-card-actions>
+            </mat-card>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-10 products" *ngIf="this.view === 'pictures'">
+      <div class="row">
+        <div class="product col-3" *ngFor="let product of products">
+          <a routerLink="/product/{{product.id}}">
+            <mat-card class="product-card">
+              <mat-card-header>
+                <mat-card-title>{{product.title}}</mat-card-title>
+              </mat-card-header>
+              <img *ngIf="this.product.images[0]"
+                   [src]="'data:' + this.product.images[0].type + ';base64,' + this.product.images[0].picByte">
+              <mat-card-actions *ngIf="this.user !== undefined">
+                <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
+                <a input class="btn btn-light" routerLink="/edit-ad/{{product.id}}">EDIT</a>
+              </mat-card-actions>
+            </mat-card>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>

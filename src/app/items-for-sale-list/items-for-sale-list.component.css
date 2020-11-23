@@ -22,3 +22,18 @@
   margin-top: 50px;
 }
 
+.left-widget {
+  padding: 15px;
+  background-color: #fffbe3;
+}
+
+.menu {
+  padding-left: 15px;
+  padding-right: 8px;
+}
+
+ul, li {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
