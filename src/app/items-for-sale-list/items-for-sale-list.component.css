@@ -25,3 +25,7 @@ ul, li {
   padding-inline-start: 0;
 }
 
+.left-widget {
+  height: 100%;
+}
+
