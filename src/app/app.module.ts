@@ -101,6 +101,7 @@ import {MatButtonModule} from '@angular/material/button';
     MatProgressBarModule,
     MatDialogModule,
     MatTooltipModule,
+    ReactiveFormsModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
