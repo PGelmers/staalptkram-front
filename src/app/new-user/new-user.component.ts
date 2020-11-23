@@ -13,6 +13,7 @@ export class NewUserComponent implements OnInit {
   newUser = new User();
   newAccount = new Login();
   testString = 'The purpose of this string is for testing';
+  hide = true;
 
   constructor(public loginService: LoginService) {
   }

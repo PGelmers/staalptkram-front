@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         } else {
           this.testString2 = 'Success! \n\nUser with id ' + returnedUser.id + ' has logged in. \n\n';
           GlobalConstants.user = this.user;
-          this.router.navigateByUrl('/personal');
+          // this.router.navigateByUrl('/personal');
         }
       }
     );
