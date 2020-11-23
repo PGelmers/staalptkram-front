@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   login = new Login();
   user = new User();
   testString2 = 'The purpose of this string is for testing';
+  hide = true;
 
   constructor(public loginService: LoginService, private router: Router) {
   }
