@@ -4,6 +4,7 @@ import {Location} from '@angular/common';
 
 import {ItemForSale} from '../../model/item-for-sale';
 import {ItemForSaleService} from '../../services/item-for-sale.service';
+import {OpenstreetmapComponent} from '../openstreetmap/openstreetmap.component';
 
 @Component({
   selector: 'app-item-for-sale',
@@ -12,6 +13,7 @@ import {ItemForSaleService} from '../../services/item-for-sale.service';
 })
 export class ItemForSaleComponent implements OnInit {
   itemForSale: ItemForSale;
+  openStreetMap = new OpenstreetmapComponent();
 
   constructor(
     private route: ActivatedRoute,
@@ -22,6 +24,8 @@ export class ItemForSaleComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSingleItemForSale(Number(this.route.snapshot.paramMap.get('productid')));
+    this.openStreetMap.setCoordinates(53.20589, 6.57904);
+    this.openStreetMap.initializeMap();
   }
 
   getSingleItemForSale(id: number): void {
