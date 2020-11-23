@@ -1,34 +1,55 @@
 <app-navbar></app-navbar>
 
-<p>Add Product:</p>
-<p>Title: <input type="text" [(ngModel)]="product.title" name="title" placeholder="title"></p>
-<p>Price: <input type="number" [(ngModel)]="product.price" name="price" placeholder="price"></p>
-<p>Description: <input type="text" [(ngModel)]="product.description" name="description" placeholder="description"></p>
-<label for="category">Category: </label>
-<select id="category" name="category" [(ngModel)]="product.category">
-  <option value="FIETSEN">Fietsen</option>
-  <option value="KNIKKERS">Knikkers</option>
-  <option value="POKEMONKAARTEN">Pokemonkaarten</option>
-</select>
-<!--<p>User ID: <input type="number" [(ngModel)]="user.id" name="user_id" placeholder="user id"></p>-->
+<div class="container whole-screen">
+  <div class="row align-items-center row-100">
 
-<button (click)="save()">Upload Product</button>
+    <div class="col-4 mx-auto">
+<h1>Add Product:</h1>
+<mat-form-field appearance="fill"><mat-label>Title</mat-label>
+  <input matInput type="text" [(ngModel)]="product.title" name="title" placeholder="Title of product">
+</mat-form-field><br>
 
-<div *ngIf="!productIsUploaded">
-  <p>Upload your product. You can then upload one or more images of your product.</p>
+<mat-form-field appearance="fill"><mat-label>Price</mat-label>
+  <input matInput type="number" [(ngModel)]="product.price" name="price" placeholder="Price of product">
+</mat-form-field><br>
+
+<mat-form-field appearance="fill"><mat-label>Description</mat-label>
+  <input matInput type="text" [(ngModel)]="product.description" name="description" placeholder="Description of product">
+</mat-form-field><br>
+
+
+<mat-form-field appearance="fill">
+  <mat-label>Select</mat-label>
+  <mat-select id="category" name="category" [(ngModel)]="product.category">
+    <mat-option value="FIETSEN">Fietsen</mat-option>
+    <mat-option value="KNIKKERS">Knikkers</mat-option>
+    <mat-option value="POKEMONKAARTEN">Pokemonkaarten</mat-option>
+  </mat-select>
+</mat-form-field><br>
+
+      <div *ngIf="!productIsUploaded">
+
+      <div class="form-group d-flex justify-content-center">
+<button mat-stroked-button color="primary" type="button" (click)="save()">Upload Product</button>
+      </div>
+  <p>Please upload your product. You can then upload one or more images of your product.</p>
 </div>
+
+    </div></div></div>
+
 <div *ngIf="productIsUploaded">
 
   <app-image-upload [productId]="this.product.id"></app-image-upload>
-  <div class="container row">
+  <div class="container row mx-auto">
+
     <div class="col-lg-3 image-container-self" *ngFor="let image of this.product.images">
       <div>
+
         <img [src]="'data:' + image.type + ';base64,' + image.picByte">
       </div>
     </div>
   </div>
 
-</div>
+    </div>
 
 
-<!--SEE CSS IN LOCAL CSS FILE-->

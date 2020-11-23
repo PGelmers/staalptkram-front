@@ -6,6 +6,7 @@ import {User} from '../../model/user';
 import {GlobalConstants} from '../../common/global-constants';
 import {ActivatedRoute, Router} from '@angular/router';
 
+
 @Component({
   selector: 'app-product-form',
   templateUrl: './product-form.component.html',

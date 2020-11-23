@@ -1,16 +1,14 @@
-<div class="container row">
-  <div class="col-lg-12">
-    <h1>Upload Image</h1>
-    <p>Upload image for product {{productId}}</p>
-  </div>
-</div>
+<div class="container whole-screen">
+  <div class="row align-items-center row-100">
 
-<div class="container row">
-  <div class="col-lg-6">
+    <div class="col-4 mx-auto">
+
+    <h1>Upload Image:</h1>
+
     <input type="file" (change)="onFileChanged($event)">
+
+  <div class="form-group d-flex justify-content-center">
+    <button mat-stroked-button color="primary" type="button" (click)="onUpload()" value="upload">Upload Image</button>
   </div>
-  <div class="col-lg-6">
-    <input type="button" (click)="onUpload()" value="upload">
-  </div>
-</div>
-<hr/>
+
+    </div></div></div>
