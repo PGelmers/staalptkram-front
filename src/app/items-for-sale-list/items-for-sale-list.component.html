@@ -6,52 +6,30 @@
     </div>
   </div>
 
-
-  <mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
-
-  <table>
-    <tr *ngFor="let product of products">
-
-      <td><a routerLink="/product/{{product.id}}">{{product.id}}</a></td>
-      <td>{{product.title}}</td>
-      <td>{{product.description}}</td>
-      <td>${{product.price}}</td>
-      <td>{{product.category}}</td>
-      <td>{{product.user.id}}</td>
-      <td>
-        <div class="image-container-self" *ngIf="this.product.images[0]">
-          <div>
-            <img [src]="'data:' + this.product.images[0].type + ';base64,' + this.product.images[0].picByte">
-          </div>
-        </div>
-      </td>
-      <td *ngIf="this.user !== undefined">
-        <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
-      </td>
-      <td *ngIf="this.user !== undefined">
-        <a input class="btn btn-light" routerLink="/edit-ad/{{product.id}}">EDIT</a>
-        <!--          <button input class="btn btn-light" (click)="edit(product.id)">EDIT</button>-->
-      </td>
-    </tr>
-  </table>
+  <div class="row products">
+    <div class="product col-3" *ngFor="let product of products">
+      <a routerLink="/product/{{product.id}}">
+        <mat-card class="product-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{product.title}}</mat-card-title>
+            <mat-card-subtitle>{{product.category}}</mat-card-subtitle>
+          </mat-card-header>
+          <img *ngIf="this.product.images[0]"
+               [src]="'data:' + this.product.images[0].type + ';base64,' + this.product.images[0].picByte">
+          <mat-card-content>
+            {{product.description}}<br><br>
+            Prijs: €{{product.price}}<br>
+            Verkoper: {{product.user.id}}<br>
+          </mat-card-content>
+          <mat-card-actions *ngIf="this.user !== undefined">
+            <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
+            <a input class="btn btn-light" routerLink="/edit-ad/{{product.id}}">EDIT</a>
+          </mat-card-actions>
+        </mat-card>
+      </a>
+    </div>
+  </div>
 </div>
 
 
