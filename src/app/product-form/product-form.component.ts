@@ -17,8 +17,9 @@ export class ProductFormComponent implements OnInit {
   productIsUploaded = false;
   product = new ItemForSale();
   user = GlobalConstants.user;
+  comesfromedit = false;
 
-  constructor(private productService: ItemForSaleService, private route: ActivatedRoute) {
+  constructor(private productService: ItemForSaleService, private route: ActivatedRoute, private router: Router) {
   }
 
   // tslint:disable-next-line:typedef
@@ -29,8 +30,12 @@ export class ProductFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (this.user === undefined) {
+      this.router.navigateByUrl('/startscreen');
+    }
     this.product.id = Number(this.route.snapshot.paramMap.get('productid'));
     if (this.product.id !== 0) {
+      this.comesfromedit = true;
       this.productService.getItemForSale(this.product.id).subscribe(
         prd => {
           this.product = prd;
