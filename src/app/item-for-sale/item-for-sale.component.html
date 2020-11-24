@@ -1,10 +1,11 @@
-<div *ngIf="itemForSale">
-  <h2>{{itemForSale.title | uppercase}} | Details</h2>
-  <h3>Categorie: {{itemForSale.category}}</h3>
-  <p>
-    Item id: {{itemForSale.id}}<br>
-    Omschrijving: <br>{{itemForSale.description}}
-  </p>
+<div class="container whole-screen">
+
+  <div *ngIf="itemForSale">
+    <h1>{{itemForSale.title | uppercase}} | Details</h1>
+    <h2>Categorie: {{itemForSale.category}}</h2>
+    <p class="label-category">Item id: {{itemForSale.id}}</p><br>
+    <p class="label-category">Omschrijving: {{itemForSale.description}}</p>
+  </div>
 
   <div class="container row">
     <div class="col-lg-3 image-container-self" *ngFor="let image of this.itemForSale.images">
@@ -14,11 +15,13 @@
     </div>
   </div>
 
-  <button (click)="goBack()">go back</button>
-</div>
+  <button mat-stroked-button color="primary" type="button" routerLink="/startscreen">Terug</button>
+  <button mat-stroked-button color="primary" type="button">Edit</button>
 
-<div id="map" class="map" style="width:600px"></div>
-<div id="popup" class="ol-popup">
-  <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-  <div id="popup-content"></div>
+  <div id="map" class="map" style="width:600px"></div>
+  <div id="popup" class="ol-popup">
+    <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+    <div id="popup-content"></div>
+  </div>
+
 </div>
