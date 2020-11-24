@@ -17,7 +17,7 @@
     <div class="col-4 mx-auto">
 <h1>Add Product:</h1>
 <mat-form-field appearance="fill"><mat-label>Title</mat-label>
-  <input matInput type="text" [(ngModel)]="product.title" name="title" placeholder="Title of product" class="form-control" required minlength="1" #title="ngModel">
+  <input matInput type="text" [(ngModel)]="product.title" name="title" placeholder="Title of product" class="form-control" required minlength="1" #title="ngModel" [disabled]="productIsUploaded && !comesfromedit">
 </mat-form-field>
 
       <div *ngIf="title.invalid && (title.dirty || title.touched)"class="alert alert-danger">
@@ -27,7 +27,7 @@
       </div>
 
 <mat-form-field appearance="fill"><mat-label>Price</mat-label>
-  <input matInput type="number" [(ngModel)]="product.price" name="price" placeholder="Price of product" class="form-control" required minlength="1" #price="ngModel">
+  <input matInput type="number" [(ngModel)]="product.price" name="price" placeholder="Price of product" class="form-control" required minlength="1" #price="ngModel" [disabled]="productIsUploaded && !comesfromedit">
 </mat-form-field>
 
       <div *ngIf="price.invalid && (price.dirty || price.touched)"class="alert alert-danger">
@@ -37,7 +37,7 @@
       </div>
 
 <mat-form-field appearance="fill"><mat-label>Description</mat-label>
-  <input matInput type="text" [(ngModel)]="product.description" name="description" placeholder="Description of product" class="form-control" required minlength="1" #description="ngModel">
+  <input matInput type="text" [(ngModel)]="product.description" name="description" placeholder="Description of product" class="form-control" required minlength="1" #description="ngModel" [disabled]="productIsUploaded && !comesfromedit">
 </mat-form-field>
 
       <div *ngIf="description.invalid && (description.dirty || description.touched)"class="alert alert-danger">
@@ -48,7 +48,7 @@
 
 <mat-form-field appearance="fill">
   <mat-label>Select</mat-label>
-  <mat-select id="category" name="category" [(ngModel)]="product.category" class="form-control" required minlength="1" #category="ngModel">
+  <mat-select id="category" name="category" [(ngModel)]="product.category" class="form-control" required minlength="1" #category="ngModel" [disabled]="productIsUploaded && !comesfromedit">
     <mat-option value="FIETSEN">Fietsen</mat-option>
     <mat-option value="KNIKKERS">Knikkers</mat-option>
     <mat-option value="POKEMONKAARTEN">Pokemonkaarten</mat-option>
@@ -61,7 +61,7 @@
         </div>
       </div>
 
-      <div class="form-group d-flex justify-content-center">
+      <div class="form-group d-flex justify-content-center" *ngIf="!productIsUploaded || comesfromedit">
 <button mat-stroked-button color="primary" type="button" [disabled]="!title.valid || !price.valid || !description.valid || !category.valid" (click)="save()">Upload Product</button>
       </div>
       <div *ngIf="!productIsUploaded">
