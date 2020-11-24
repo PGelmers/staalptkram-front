@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ItemForSale} from '../../model/item-for-sale';
 import {ItemForSaleService} from '../../services/item-for-sale.service';
 import {User} from '../../model/user';
+import {Router} from '@angular/router';
 
 // TODO: Make button that changes a variable to 'only pictures' and show with *ngIf only pictures or the details like it is now
 
@@ -21,7 +22,7 @@ export class ItemsForSaleListComponent implements OnInit {
   maxItems = 1000;
   view = 'details';
 
-  constructor(private itemForSaleService: ItemForSaleService) {
+  constructor(private itemForSaleService: ItemForSaleService, private router: Router) {
   }
 
   // tslint:disable-next-line:typedef
@@ -102,6 +103,11 @@ export class ItemsForSaleListComponent implements OnInit {
   // tslint:disable-next-line:typedef
   setsortvalue(sortvalue: string) {
     this.sortbyvalue = sortvalue;
+  }
+
+  // tslint:disable-next-line:typedef
+  createad() {
+    this.router.navigateByUrl('/create-ad');
   }
 
 }
