@@ -12,8 +12,8 @@ declare var ol: any;
 export class OpenstreetmapComponent implements OnInit {
   user = new User();
 
-  latitude: number;
-  longitude: number;
+  latitude = 0;
+  longitude = 0;
 
   map: any;
 
@@ -47,7 +47,7 @@ export class OpenstreetmapComponent implements OnInit {
       ],
       view: new ol.View({
         center: ol.proj.fromLonLat([this.longitude, this.latitude]),
-        zoom: 19,
+        zoom: 17,
         marker: ol.proj.fromLonLat([this.longitude, this.latitude])
       })
     });
