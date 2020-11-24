@@ -31,8 +31,7 @@ export class LoginComponent implements OnInit {
         } else {
           this.message = 'Success! \n\nWelcome back ' + returnedUser.firstName + '\n\n';
           GlobalConstants.user = this.user;
-          // TODO: Uncomment the line below after testing
-          // this.router.navigateByUrl('/personal');
+          this.router.navigateByUrl('/personal');
         }
       }
     );

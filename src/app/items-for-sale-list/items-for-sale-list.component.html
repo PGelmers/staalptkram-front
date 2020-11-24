@@ -4,7 +4,7 @@
       <div class="row">
         <div class="offset-9 col-1">
           <a routerLink="/create-ad">
-            <button mat-raised-button color="accent">
+            <button mat-raised-button color="accent" *ngIf="user !== undefined" routerLink="/create-ad">
               New ad
             </button>
           </a>

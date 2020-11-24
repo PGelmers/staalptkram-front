@@ -47,7 +47,7 @@ export class OpenstreetmapComponent implements OnInit {
       ],
       view: new ol.View({
         center: ol.proj.fromLonLat([this.longitude, this.latitude]),
-        zoom: 19,
+        zoom: 17,
         marker: ol.proj.fromLonLat([this.longitude, this.latitude])
       })
     });
