@@ -10,15 +10,15 @@ import {GlobalConstants} from '../../common/global-constants';
 })
 export class PersonalComponent implements OnInit {
   user = new User();
-  // openStreetMap = new OpenstreetmapComponent();
+  openStreetMap = new OpenstreetmapComponent();
 
   constructor() {
   }
 
   ngOnInit(): void {
-    // this.openStreetMap.setCoordinates(53.20589, 6.57904);
-    // this.openStreetMap.initializeMap();
     this.user = GlobalConstants.user;
+    this.openStreetMap.setCoordinates(this.user.latitude, this.user.longitude);
+    this.openStreetMap.initializeMap();
     console.log(this.user);
   }
 }

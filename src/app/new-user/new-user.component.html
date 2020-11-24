@@ -63,17 +63,24 @@
           Username and password are <strong>required</strong>
         </mat-error>
       </mat-form-field>
-
       <div class="form-group d-flex justify-content-center">
         <button mat-stroked-button color="primary" type="button" (click)="saveNewUser()">Register</button>
       </div>
-
       <div>
         <p id="message"> {{message}} </p>
       </div>
-
     </div>
+    <div class="col-1"></div>
+    <div class="col-7 mx-auto">
+      <p class="map-message"> Click on the map below where you live!</p>
+      <!--  FOR MAPS API    -->
+      <div id="map"></div>
+      <!--  END OF MAPS API -->
+    </div>
+
   </div>
+
+
 </div>
 
 
