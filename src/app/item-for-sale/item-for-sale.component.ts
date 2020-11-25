@@ -12,7 +12,7 @@ import {OpenstreetmapComponent} from '../openstreetmap/openstreetmap.component';
   styleUrls: ['./item-for-sale.component.css']
 })
 export class ItemForSaleComponent implements OnInit {
-  itemForSale: ItemForSale;
+  itemForSale = new ItemForSale();
   openStreetMap = new OpenstreetmapComponent();
 
   constructor(
@@ -24,13 +24,16 @@ export class ItemForSaleComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSingleItemForSale(Number(this.route.snapshot.paramMap.get('productid')));
-    this.openStreetMap.setCoordinates(53.20589, 6.57904);
+    console.log(this.itemForSale.latitude, this.itemForSale.longitude);
+    // this.openStreetMap.setCoordinates(53.20589, 6.57904);
+    this.openStreetMap.setCoordinates(this.itemForSale.latitude, this.itemForSale.longitude);
     this.openStreetMap.initializeMap();
   }
 
   getSingleItemForSale(id: number): void {
     this.itemForSaleService.getItemForSale(id).subscribe(
       itemForSale => this.itemForSale = itemForSale);
+    console.log('TITEL: ' + this.itemForSale.title);
   }
 
   goBack(): void {
