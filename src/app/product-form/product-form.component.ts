@@ -1,8 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ItemForSale} from '../../model/item-for-sale';
 import {ItemForSaleService} from '../../services/item-for-sale.service';
-import {ItemsForSaleListComponent} from '../items-for-sale-list/items-for-sale-list.component';
-import {User} from '../../model/user';
 import {GlobalConstants} from '../../common/global-constants';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ImageService} from '../../services/image.service';

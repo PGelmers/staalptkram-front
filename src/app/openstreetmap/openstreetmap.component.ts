@@ -25,18 +25,12 @@ export class OpenstreetmapComponent implements OnInit {
   }
 
   setCoordinates(latitude: number, longitude: number): void {
-    // TODO: deze methode is om te testen. Kan later weg omdat coördinaten uit de user komen.
-    // Zie onder.
     this.latitude = latitude;
     this.longitude = longitude;
   }
 
   initializeMap(): void {
     this.user = GlobalConstants.user;
-
-    // TODO: aanzetten zodra login component geïntegreerd is.
-    // this.latitude = this.user.latitude;
-    // this.longitude = this.user.longitude;
 
     this.map = new ol.Map({
       target: 'map',
