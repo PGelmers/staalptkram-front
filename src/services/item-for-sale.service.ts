@@ -22,8 +22,6 @@ export class ItemForSaleService {
   }
 
   getItemForSale(id: number): Observable<ItemForSale> {
-    console.log('id: ' + id);
-
     const url = `${this.itemForSaleUrl}/${id}`;
 
     return this.http.get<ItemForSale>(url).pipe(

@@ -25,7 +25,6 @@ export class OpenstreetmapComponent implements OnInit {
   }
 
   setCoordinates(latitude: number, longitude: number): void {
-    // console.log(latitude, longitude);
     this.latitude = latitude;
     this.longitude = longitude;
   }
