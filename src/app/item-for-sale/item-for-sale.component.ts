@@ -30,7 +30,6 @@ export class ItemForSaleComponent implements OnInit {
     this.itemForSaleService.getItemForSale(id).subscribe(
       itemForSale => {
         this.itemForSale = itemForSale;
-        console.log(this.itemForSale.user.longitude + '   ' + this.itemForSale.user.latitude);
         this.openStreetMap.setCoordinates(this.itemForSale.user.latitude, this.itemForSale.user.longitude);
         this.openStreetMap.initializeMap();
       });
