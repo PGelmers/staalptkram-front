@@ -61,7 +61,7 @@
                          src="../../assets/default-img.gif">
                   </div>
                   <div class="col-9 contentbox">
-                    <p>{{product.description}}</p>
+                    <p class="description">{{product.description}}</p>
                     <p>Prijs: €{{product.price.toFixed(2)}}</p>
                     <p>Verkoper: {{product.user.id}}</p>
                   </div>
@@ -76,7 +76,7 @@
         </div>
       </div>
     </div>
-    <div class="col-10 products" *ngIf="this.view === 'pictures'">
+    <div class="col-10 products images_view" *ngIf="this.view === 'pictures'">
       <div class="row">
         <div class="product col-3" *ngFor="let product of products">
           <a routerLink="/product/{{product.id}}">
@@ -84,10 +84,12 @@
               <mat-card-header>
                 <mat-card-title>{{product.title}}</mat-card-title>
               </mat-card-header>
+              <div class="col-12 imagebox">
               <img mat-card-image *ngIf="this.product.images[0]"
                    [src]="'data:' + this.product.images[0].type + ';base64,' + this.product.images[0].picByte">
               <img mat-card-image *ngIf="!this.product.images[0]"
                    src="../../assets/default-img.gif">
+              </div>
               <mat-card-actions *ngIf="this.user !== undefined">
                 <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
                 <a input class="btn btn-light" routerLink="/edit-ad/{{product.id}}">EDIT</a>
