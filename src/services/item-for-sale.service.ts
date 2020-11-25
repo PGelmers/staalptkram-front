@@ -45,6 +45,13 @@ export class ItemForSaleService {
   }
 
   // tslint:disable-next-line:typedef
+  deleteImage(productId: number, imageId: number) {
+    const url = 'http://localhost:8080/product/deleteimage/' + productId + '/' + imageId;
+    console.log(url);
+    return this.http.delete(url);
+  }
+
+  // tslint:disable-next-line:typedef
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);

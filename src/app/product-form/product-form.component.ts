@@ -5,6 +5,7 @@ import {ItemsForSaleListComponent} from '../items-for-sale-list/items-for-sale-l
 import {User} from '../../model/user';
 import {GlobalConstants} from '../../common/global-constants';
 import {ActivatedRoute, Router} from '@angular/router';
+import {ImageService} from '../../services/image.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class ProductFormComponent implements OnInit {
   user = GlobalConstants.user;
   comesfromedit = false;
 
-  constructor(private productService: ItemForSaleService, private route: ActivatedRoute, private router: Router) {
+  constructor(private productService: ItemForSaleService, private imageService: ImageService, private route: ActivatedRoute, private router: Router) {
   }
 
   // tslint:disable-next-line:typedef
@@ -27,6 +28,13 @@ export class ProductFormComponent implements OnInit {
     this.product.user = this.user;
     this.productService.save(this.product).subscribe((prd: ItemForSale) => this.product = prd);
     this.productIsUploaded = true;
+  }
+
+  // tslint:disable-next-line:typedef
+  deleteImage(id: number){
+    console.log(id);
+    console.log(this.product.id);
+    this.productService.deleteImage(this.product.id, id).subscribe();
   }
 
   ngOnInit(): void {

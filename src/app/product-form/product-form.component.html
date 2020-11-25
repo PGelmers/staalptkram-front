@@ -80,6 +80,7 @@
       <div>
 
         <img [src]="'data:' + image.type + ';base64,' + image.picByte">
+        <button (click)="deleteImage(image.id)">DEL</button>
       </div>
     </div>
   </div>

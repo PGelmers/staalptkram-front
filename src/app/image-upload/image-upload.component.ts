@@ -24,6 +24,7 @@ export class ImageUploadComponent implements OnInit {
   public onFileChanged(event): void {
     // Select File
     this.selectedFile = event.target.files[0];
+    this.onUpload();
   }
 
   // Gets called when the user clicks on submit to upload the image (through the ImageService)
