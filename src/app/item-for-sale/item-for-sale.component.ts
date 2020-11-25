@@ -24,13 +24,17 @@ export class ItemForSaleComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSingleItemForSale(Number(this.route.snapshot.paramMap.get('productid')));
-    this.openStreetMap.setCoordinates(53.20589, 6.57904);
-    this.openStreetMap.initializeMap();
+
   }
 
   getSingleItemForSale(id: number): void {
     this.itemForSaleService.getItemForSale(id).subscribe(
-      itemForSale => this.itemForSale = itemForSale);
+      itemForSale => {
+        this.itemForSale = itemForSale;
+        console.log(this.itemForSale.user.longitude + '   ' + this.itemForSale.user.latitude);
+        this.openStreetMap.setCoordinates(this.itemForSale.user.latitude, this.itemForSale.user.longitude);
+        this.openStreetMap.initializeMap();
+      });
   }
 
   goBack(): void {
