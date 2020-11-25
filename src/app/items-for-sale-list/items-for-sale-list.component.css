@@ -31,3 +31,32 @@ ul, li {
   margin-bottom: 25px;
 }
 
+.details_view{
+  height: 200px;
+}
+
+.details_view .imagebox{
+  height: 140px;
+}
+
+.details_view .imagebox img{
+  height:100%;
+  width:100%;
+  object-fit: cover;
+}
+
+.details_view .contentbox {
+  height: 150px;
+}
+
+.details_view mat-card-content textarea{
+  height:90px;
+  width: 100%;
+}
+
+.details_view mat-card-content p{
+  height:15px;
+  margin-top:15px;
+  width: 100%;
+}
+
