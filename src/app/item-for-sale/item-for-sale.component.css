@@ -1,4 +1,12 @@
-.image-container-self img{
+.image-container-self img {
   width: 100%;
   margin-top: 25px;
+}
+
+.buttons {
+  margin-bottom: 25px;
+}
+
+.buttons button {
+  margin-right: 10px;
 }
