@@ -3,6 +3,9 @@ import {User} from '../../model/user';
 import {Login} from '../../model/login';
 import {LoginService} from '../../services/login.service';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {MatDialog} from '@angular/material/dialog';
+import {RegisterPopUpComponent} from '../register-pop-up/register-pop-up.component';
 
 @Component({
   selector: 'app-new-user',
@@ -29,7 +32,7 @@ export class NewUserComponent implements OnInit {
     Validators.required
   ]);
 
-  constructor(public loginService: LoginService) {
+  constructor(public loginService: LoginService, private router: Router, public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -43,7 +46,7 @@ export class NewUserComponent implements OnInit {
       this.message = 'Please look at the email form field. There is something wrong with your input!';
     } else if (this.accountInfoFormControl.hasError('required')) {
       this.message = 'You missed some required input!';
-    } else if (this.newUser.latitude === 0 || this.newUser.longitude === 0){
+    } else if (this.newUser.latitude === 0 || this.newUser.longitude === 0) {
       this.message = 'Don\'t forget to click on your location on the map.';
     } else {
       this.loginService.saveNewUser(this.newUser).subscribe(
@@ -55,7 +58,8 @@ export class NewUserComponent implements OnInit {
                 this.message = 'There was a problem with your registration.';
               } else {
                 // tslint:disable-next-line:max-line-length
-                this.message = 'Welcome, ' + this.newAccount.user.firstName + '! \n\nYou have registered correctly.';
+                this.openDialog();
+
               }
             }
           );
@@ -64,9 +68,26 @@ export class NewUserComponent implements OnInit {
     }
   }
 
+
+//   export class DialogContentExample {
+//   constructor(public dialog: MatDialog) {}
+//
+  // tslint:disable-next-line:typedef
+  openDialog() {
+    const dialogRef = this.dialog.open(RegisterPopUpComponent);
+    setTimeout(() => {
+      dialogRef.close();
+      this.router.navigateByUrl('/login');
+    }, 3000);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+
   // tslint:disable-next-line:typedef
   initMap() {
-    const myLatLng = { lat: 52.242, lng: 5.6905 };
+    const myLatLng = {lat: 52.242, lng: 5.6905};
 
     // @ts-ignore
     // tslint:disable-next-line:no-non-null-assertion

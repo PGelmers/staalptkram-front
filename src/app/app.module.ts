@@ -51,6 +51,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
+import { RegisterPopUpComponent } from './register-pop-up/register-pop-up.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import {MatButtonModule} from '@angular/material/button';
     FakeComponent,
     NavbarComponent,
     OpenstreetmapComponent,
+    RegisterPopUpComponent,
   ],
   imports: [
     AppRoutingModule,
