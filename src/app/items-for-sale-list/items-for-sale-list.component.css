@@ -32,7 +32,7 @@ ul, li {
 }
 
 .details_view{
-  height: 200px;
+  height: 100%;
 }
 
 .details_view .imagebox{

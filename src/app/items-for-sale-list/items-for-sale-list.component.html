@@ -43,33 +43,6 @@
         </div>
       </div>
     </div>
-    <div class="col-10 products image_view" *ngIf="this.view !== 'details'">
-      <div class="row">
-        <div class="product col-3" *ngFor="let product of products">
-          <a routerLink="/product/{{product.id}}">
-            <mat-card class="product-card">
-              <mat-card-header>
-                <mat-card-title>{{product.title}}</mat-card-title>
-                <mat-card-subtitle>{{product.category}}</mat-card-subtitle>
-              </mat-card-header>
-              <img mat-card-image *ngIf="this.product.images[0]"
-                   [src]="'data:' + this.product.images[0].type + ';base64,' + this.product.images[0].picByte">
-              <img mat-card-image *ngIf="!this.product.images[0]"
-                   src="../../assets/default-img.gif">
-              <mat-card-content>
-                {{product.description}}<br><br>
-                Prijs: €{{product.price.toFixed(2)}}<br>
-                Verkoper: {{product.user.id}}<br>
-              </mat-card-content>
-              <mat-card-actions *ngIf="this.user !== undefined">
-                <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
-                <a input class="btn btn-light" routerLink="/edit-ad/{{product.id}}">EDIT</a>
-              </mat-card-actions>
-            </mat-card>
-          </a>
-        </div>
-      </div>
-    </div>
     <div class="col-10 products details_view" *ngIf="this.view === 'details'">
       <div class="row">
         <div class="product col-12" *ngFor="let product of products">
@@ -126,5 +99,6 @@
     </div>
   </div>
 </div>
+
 
 

@@ -13,10 +13,6 @@
     </div>
     <div class="col-6">
       <div id="map" class="map" style="width:600px"></div>
-      <div id="popup" class="ol-popup">
-        <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-        <div id="popup-content"></div>
-      </div>
     </div>
   </div>
 
@@ -30,7 +26,8 @@
 
   <div class="row buttons">
     <button mat-stroked-button color="primary" type="button" routerLink="/startscreen">Terug</button>
-    <button mat-stroked-button color="primary" type="button">Edit</button>
+    <a></a>
+    <button mat-stroked-button color="primary" type="button" routerLink="/edit-ad/{{itemForSale.id}}">Edit</button>
 
     <app-messages></app-messages>
   </div>
