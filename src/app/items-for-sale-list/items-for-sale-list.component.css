@@ -31,17 +31,17 @@ ul, li {
   margin-bottom: 25px;
 }
 
-.details_view{
+.details_view {
   height: 100%;
 }
 
-.details_view .imagebox{
+.details_view .imagebox {
   height: 140px;
 }
 
-.details_view .imagebox img{
-  height:100%;
-  width:100%;
+.details_view .imagebox img {
+  height: 100%;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -49,14 +49,50 @@ ul, li {
   height: 150px;
 }
 
-.details_view mat-card-content textarea{
-  height:90px;
+.details_view mat-card-content textarea {
+  height: 90px;
   width: 100%;
+
 }
 
-.details_view mat-card-content p{
-  height:15px;
-  margin-top:15px;
+.details_view mat-card-content p.description {
   width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+.images_view {
+  height: 100%;
+}
+
+.images_view .imagebox {
+  height: 140px;
+  margin-bottom: 10px;
+}
+
+.images_view .imagebox img {
+  margin-top: 10px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.images_view mat-card-title {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.images_view mat-card-header {
+  height: 40px;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
