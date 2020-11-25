@@ -7,6 +7,8 @@ export class ItemForSale {
   price: number;
   description: string;
   category: string;
+  longitude: number;
+  latitude: number;
   images: Image[];
   user: User;
 }
