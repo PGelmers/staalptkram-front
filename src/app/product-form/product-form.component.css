@@ -1,6 +1,13 @@
+.image-container-self{
+  width: 100%;
+  height: 300px;
+  margin-top:25px;
+}
+
 .image-container-self img{
-  width: 70%;
-  margin-top: 25px;
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
 }
 
 .example-form {
@@ -12,3 +19,4 @@
 mat-form-field {
   width: 100%;
 }
+

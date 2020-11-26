@@ -1,35 +1,41 @@
-<app-navbar></app-navbar>
+<mat-drawer-container autosize class="example-container testclasskdoas">
+  <app-navbar></app-navbar>
+  <div class="container whole-screen">
+    <h1>{{itemForSale.title | uppercase}} | Details</h1>
+    <h2>Categorie: {{itemForSale.category}}</h2>
+    <div class="row">
+      <div class="col-6">
+        <div *ngIf="itemForSale">
 
-<div class="container whole-screen">
-
-  <div class="row">
-    <div class="col-6">
-      <div *ngIf="itemForSale">
-        <h1>{{itemForSale.title | uppercase}} | Details</h1>
-        <h2>Categorie: {{itemForSale.category}}</h2>
-        <p class="label-category">Item id: {{itemForSale.id}}</p><br>
-        <p class="label-category">Omschrijving: {{itemForSale.description}}</p>
+<!--          <p class="label-category">Item id: {{itemForSale.id}}</p><br>-->
+<!--          <p class="label-category">Omschrijving: {{itemForSale.description}}</p>-->
+          <p class="label-category">{{itemForSale.description}}</p>
+        </div>
+      </div>
+      <div class="col-6">
+        <div id="map" class="map" style="width:600px"></div>
       </div>
     </div>
-    <div class="col-6">
-      <div id="map" class="map" style="width:600px"></div>
-    </div>
-  </div>
 
   <div class="row">
     <div class="col-lg-3 image-container-self" *ngFor="let image of this.itemForSale.images">
-      <div>
+
         <img [src]="'data:' + image.type + ';base64,' + image.picByte" alt="Afbeelding van item.">
-      </div>
+
     </div>
   </div>
 
-  <div class="row buttons">
-    <button mat-stroked-button color="primary" type="button" routerLink="/startscreen">Terug</button>
-    <a></a>
-    <button mat-stroked-button color="primary" type="button" routerLink="/edit-ad/{{itemForSale.id}}">Edit</button>
-
-    <app-messages></app-messages>
+    <div class="row buttons">
+      <button mat-stroked-button color="primary" type="button" routerLink="/startscreen">Terug</button>
+      <a></a>
+      <button mat-stroked-button color="primary" type="button" *ngIf="this.user !== undefined" routerLink="/edit-ad/{{itemForSale.id}}">Edit</button>
+      <button class="btn btn-success" (click)="messageService.newChat(); drawer.toggle()">Chat met verkoper</button>
+    </div>
   </div>
+</mat-drawer-container>
 
-</div>
+<mat-drawer #drawer class="example-sidenav" mode="over" position="end">
+  <app-messages></app-messages>
+</mat-drawer>
+
+

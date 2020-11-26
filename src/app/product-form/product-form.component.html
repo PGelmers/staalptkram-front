@@ -1,73 +1,108 @@
 <app-navbar></app-navbar>
 
-
-<!--<input id="name" name="name" class="form-control" required minlength="1" [(ngModel)]="product.title" #name="ngModel" >-->
-
-<!--<div *ngIf="name.invalid && (name.dirty || name.touched)"class="alert alert-danger">-->
-<!--  <div *ngIf="name.errors.required">-->
-<!--    Title is required.-->
-<!--  </div>-->
-<!--</div>-->
-
 <div class="container whole-screen">
   <div class="row align-items-center row-100">
 
     <div class="col-4 mx-auto">
-<h1>Add Product:</h1>
-<mat-form-field appearance="fill"><mat-label>Title</mat-label>
-  <input matInput type="text" [(ngModel)]="product.title" name="title" placeholder="Title of product" class="form-control" required minlength="1" #title="ngModel" [disabled]="productIsUploaded && !comesfromedit">
-</mat-form-field>
+      <h1>Add Product:</h1>
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" [(ngModel)]="product.title" name="title" placeholder="Title of product"
+               class="form-control" required minlength="1" #title="ngModel"
+               [disabled]="productIsUploaded && !comesfromedit">
+      </mat-form-field>
 
-      <div *ngIf="title.invalid && (title.dirty || title.touched)"class="alert alert-danger">
+      <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
         <div *ngIf="title.errors.required">
           Title is required.
         </div>
       </div>
 
-<mat-form-field appearance="fill"><mat-label>Price</mat-label>
-  <input matInput type="number" [(ngModel)]="product.price" name="price" placeholder="Price of product" class="form-control" required minlength="1" #price="ngModel" [disabled]="productIsUploaded && !comesfromedit">
-</mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Price</mat-label>
+        <input matInput type="number" [(ngModel)]="product.price" name="price" placeholder="Price of product"
+               class="form-control" required minlength="1" #price="ngModel"
+               [disabled]="productIsUploaded && !comesfromedit">
+      </mat-form-field>
 
-      <div *ngIf="price.invalid && (price.dirty || price.touched)"class="alert alert-danger">
+      <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert alert-danger">
         <div *ngIf="price.errors.required">
           Price is required.
         </div>
       </div>
 
-<mat-form-field appearance="fill"><mat-label>Description</mat-label>
-  <input matInput type="text" [(ngModel)]="product.description" name="description" placeholder="Description of product" class="form-control" required minlength="1" #description="ngModel" [disabled]="productIsUploaded && !comesfromedit">
-</mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <input matInput type="text" [(ngModel)]="product.description" name="description"
+               placeholder="Description of product" class="form-control" required minlength="1" #description="ngModel"
+               [disabled]="productIsUploaded && !comesfromedit">
+      </mat-form-field>
 
-      <div *ngIf="description.invalid && (description.dirty || description.touched)"class="alert alert-danger">
+      <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger">
         <div *ngIf="description.errors.required">
           Description is required.
         </div>
       </div>
 
-<mat-form-field appearance="fill">
-  <mat-label>Select</mat-label>
-  <mat-select id="category" name="category" [(ngModel)]="product.category" class="form-control" required minlength="1" #category="ngModel" [disabled]="productIsUploaded && !comesfromedit">
-    <mat-option value="FIETSEN">Fietsen</mat-option>
-    <mat-option value="KNIKKERS">Knikkers</mat-option>
-    <mat-option value="POKEMONKAARTEN">Pokemonkaarten</mat-option>
-  </mat-select>
-</mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Select</mat-label>
+        <mat-select id="category" name="category" [(ngModel)]="product.category" class="form-control" required
+                    minlength="1" #category="ngModel" [disabled]="productIsUploaded && !comesfromedit">
+          <mat-option value="AUDIO">Audio</mat-option>
+          <mat-option value="AUTOS">Auto's</mat-option>
+          <mat-option value="BABIES">Babies</mat-option>
+          <mat-option value="BANDENPLAKSETJES">Bandenplaksetjes</mat-option>
+          <mat-option value="BOEKEN">Boeken</mat-option>
+          <mat-option value="CHALETS">Chalets</mat-option>
+          <mat-option value="DATING">Dating</mat-option>
+          <mat-option value="EETTAFELS">Eettafels</mat-option>
+          <mat-option value="FIETSEN">Fietsen</mat-option>
+          <mat-option value="GAMES">Games</mat-option>
+          <mat-option value="HORLOGES">Horloges</mat-option>
+          <mat-option value="IPHONY">Iphony</mat-option>
+          <mat-option value="JACUZZI">Jacuzzi</mat-option>
+          <mat-option value="KNIKKERS">Knikkers</mat-option>
+          <mat-option value="LUCHTBALLONNEN">Luchtballonnen</mat-option>
+          <mat-option value="MOTOREN">Motoren</mat-option>
+          <mat-option value="MUZIEKINSTRUMENTEN">Muziekinstrumenten</mat-option>
+          <mat-option value="NACHTKASTJES">Nachtkastjes</mat-option>
+          <mat-option value="OPENHAARDHOUT">Openhaardhout</mat-option>
+          <mat-option value="PCS">PC's</mat-option>
+          <mat-option value="POKEMONKAARTEN">Pokemonkaarten</mat-option>
+          <mat-option value="QUADS">Quads</mat-option>
+          <mat-option value="RACEFIETSEN">Racefietsen</mat-option>
+          <mat-option value="SPORT">Sport</mat-option>
+          <mat-option value="TELEFOONS">Telefoons</mat-option>
+          <mat-option value="TICKETS">Tickets</mat-option>
+          <mat-option value="UKELELE">Ukelele</mat-option>
+          <mat-option value="VACATURES">Vacatures</mat-option>
+          <mat-option value="VAKANTIE">Vakantie</mat-option>
+          <mat-option value="WCS">WC's</mat-option>
+          <mat-option value="XBOX">XBOX</mat-option>
+          <mat-option value="YOGHURT">Yoghurt</mat-option>
+          <mat-option value="ZONNESCHERMEN">Zonneschermen</mat-option>
+        </mat-select>
+      </mat-form-field>
 
-      <div *ngIf="category.invalid && (category.dirty || category.touched)"class="alert alert-danger">
+      <div *ngIf="category.invalid && (category.dirty || category.touched)" class="alert alert-danger">
         <div *ngIf="category.errors.required">
           Description is required.
         </div>
       </div>
 
       <div class="form-group d-flex justify-content-center" *ngIf="!productIsUploaded || comesfromedit">
-<button mat-stroked-button color="primary" type="button" [disabled]="!title.valid || !price.valid || !description.valid || !category.valid" (click)="save()">Upload Product</button>
+        <button mat-stroked-button color="primary" type="button"
+                [disabled]="!title.valid || !price.valid || !description.valid || !category.valid" (click)="save()">
+          Upload Product
+        </button>
       </div>
       <div *ngIf="!productIsUploaded">
-  <p>Please upload your product. You can then upload one or more images of your product.</p>
+        <p>Please upload your product. You can then upload one or more images of your product.</p>
       </div>
-</div>
+    </div>
 
-    </div></div>
+  </div>
+</div>
 
 <div *ngIf="productIsUploaded">
 
@@ -75,14 +110,13 @@
   <div class="container row mx-auto">
 
     <div class="col-lg-3 image-container-self" *ngFor="let image of this.product.images">
-      <div>
 
-        <img [src]="'data:' + image.type + ';base64,' + image.picByte">
-        <button (click)="deleteImage(image.id)">DEL</button>
-      </div>
+      <img [src]="'data:' + image.type + ';base64,' + image.picByte">
+      <button (click)="deleteImage(image.id)">DEL</button>
+
     </div>
   </div>
 
-    </div>
+</div>
 
 
