@@ -168,15 +168,21 @@
                   </div>
                   <div class="col-9 contentbox">
                     <p class="description">{{product.description}}</p>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
                     <p>Prijs: €{{product.price.toFixed(2)}}</p>
-                    <p>Verkoper: {{product.user.firstName}} {{product.user.surname}}</p>
+                    <p>Verkoper: {{product.user.id}}</p>
+                        </div>
+                        <div class="col">
+                    <mat-card-actions *ngIf="this.user !== undefined">
+                      <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
+                      <a input class="btn btn-light" routerLink="/edit-ad/{{product.id}}">EDIT</a>
+                    </mat-card-actions>
+                        </div></div></div>
                   </div>
                 </div>
               </mat-card-content>
-              <mat-card-actions *ngIf="this.user !== undefined">
-                <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
-                <a input class="btn btn-light" routerLink="/edit-ad/{{product.id}}">EDIT</a>
-              </mat-card-actions>
             </mat-card>
           </a>
         </div>
@@ -196,10 +202,12 @@
               <img mat-card-image *ngIf="!this.product.images[0]"
                    src="../../assets/default-img.gif">
               </div>
-              <mat-card-actions *ngIf="this.user !== undefined">
-                <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
-                <a input class="btn btn-light" routerLink="/edit-ad/{{product.id}}">EDIT</a>
-              </mat-card-actions>
+              <div class="col-12 buttonbox">
+                <mat-card-actions *ngIf="this.user !== undefined">
+                  <button input class="btn btn-light" (click)="delete(product.id)">DELETE</button>
+                  <a input class="btn btn-light" routerLink="/edit-ad/{{product.id}}">EDIT</a>
+                </mat-card-actions>
+              </div>
             </mat-card>
           </a>
         </div>

@@ -51,7 +51,8 @@ export class ItemsForSaleListComponent implements OnInit {
   // tslint:disable-next-line:typedef
   delete(id) {
     this.itemForSaleService.delete(id).subscribe(
-      () => this.search(this.filter, this.sortbyvalue)
+      () => { this.search(this.filter, this.sortbyvalue);
+              this.router.navigateByUrl('/personal'); }
     );
   }
 
