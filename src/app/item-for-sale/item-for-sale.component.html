@@ -28,7 +28,7 @@
     <div class="row buttons">
       <button mat-stroked-button color="primary" type="button" routerLink="/startscreen">Terug</button>
       <a></a>
-      <button mat-stroked-button color="primary" type="button" routerLink="/edit-ad/{{itemForSale.id}}">Edit</button>
+      <button mat-stroked-button color="primary" type="button" *ngIf="this.user !== undefined" routerLink="/edit-ad/{{itemForSale.id}}">Edit</button>
       <button class="btn btn-success" (click)="messageService.newChat(); drawer.toggle()">Chat met verkoper</button>
     </div>
   </div>
