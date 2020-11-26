@@ -5,6 +5,7 @@ import {Location} from '@angular/common';
 import {ItemForSale} from '../../model/item-for-sale';
 import {ItemForSaleService} from '../../services/item-for-sale.service';
 import {OpenstreetmapComponent} from '../openstreetmap/openstreetmap.component';
+import {MessageServiceService} from "../../services/message-service.service";
 
 @Component({
   selector: 'app-item-for-sale',
@@ -16,6 +17,7 @@ export class ItemForSaleComponent implements OnInit {
   openStreetMap = new OpenstreetmapComponent();
 
   constructor(
+    public messageService: MessageServiceService,
     private route: ActivatedRoute,
     private itemForSaleService: ItemForSaleService,
     private location: Location
