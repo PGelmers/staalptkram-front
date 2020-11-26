@@ -18,7 +18,7 @@
     </div>
 
   <div class="row">
-    <div class="col-lg-3 image-container-self" *ngFor="let image of this.itemForSale.images">
+    <div class="col-lg-4 image-container-self" *ngFor="let image of this.itemForSale.images">
 
         <img [src]="'data:' + image.type + ';base64,' + image.picByte" alt="Afbeelding van item.">
 

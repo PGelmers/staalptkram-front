@@ -172,7 +172,7 @@
                       <div class="row">
                         <div class="col">
                     <p>Prijs: €{{product.price.toFixed(2)}}</p>
-                    <p>Verkoper: {{product.user.id}}</p>
+                    <p>Verkoper: {{product.user.firstName}} {{product.user.surname}}</p>
                         </div>
                         <div class="col">
                     <mat-card-actions *ngIf="this.user !== undefined">
