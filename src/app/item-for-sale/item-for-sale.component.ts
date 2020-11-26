@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
+import {GlobalConstants} from '../../common/global-constants';
 
 import {ItemForSale} from '../../model/item-for-sale';
 import {ItemForSaleService} from '../../services/item-for-sale.service';
@@ -15,6 +16,7 @@ import {MessageServiceService} from "../../services/message-service.service";
 export class ItemForSaleComponent implements OnInit {
   itemForSale = new ItemForSale();
   openStreetMap = new OpenstreetmapComponent();
+  user = GlobalConstants.user;
 
   constructor(
     public messageService: MessageServiceService,
