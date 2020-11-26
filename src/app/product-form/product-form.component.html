@@ -109,7 +109,7 @@
   <app-image-upload [productId]="this.product.id"></app-image-upload>
   <div class="container row mx-auto">
 
-    <div class="col-lg-3 image-container-self" *ngFor="let image of this.product.images">
+    <div class="col-lg-4 image-container-self" *ngFor="let image of this.product.images">
 
       <img [src]="'data:' + image.type + ';base64,' + image.picByte">
       <button (click)="deleteImage(image.id)">DEL</button>
