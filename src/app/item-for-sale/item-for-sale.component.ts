@@ -17,6 +17,7 @@ export class ItemForSaleComponent implements OnInit {
   itemForSale = new ItemForSale();
   openStreetMap = new OpenstreetmapComponent();
   user = GlobalConstants.user;
+  user_id = 0;
 
   constructor(
     public messageService: MessageServiceService,
@@ -28,6 +29,9 @@ export class ItemForSaleComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSingleItemForSale(Number(this.route.snapshot.paramMap.get('productid')));
+    if (this.user !== undefined){
+      this.user_id = this.user.id;
+    }
   }
 
   getSingleItemForSale(id: number): void {

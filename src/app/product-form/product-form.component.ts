@@ -18,6 +18,7 @@ export class ProductFormComponent implements OnInit {
   user = GlobalConstants.user;
   comesfromedit = false;
 
+  // tslint:disable-next-line:max-line-length
   constructor(private productService: ItemForSaleService, private imageService: ImageService, private route: ActivatedRoute, private router: Router) {
   }
 
@@ -29,10 +30,11 @@ export class ProductFormComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
-  deleteImage(id: number){
+  deleteImage(id: number) {
     console.log(id);
     console.log(this.product.id);
     this.productService.deleteImage(this.product.id, id).subscribe();
+    this.router.navigateByUrl('/fake/' + this.product.id);
   }
 
   ngOnInit(): void {
